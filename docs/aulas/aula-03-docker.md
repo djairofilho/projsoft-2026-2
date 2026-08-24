@@ -1,9 +1,13 @@
-# Aula 03 — Docker
+# Aula 03.1: Docker, imagens e containers
 
 Este guia reúne os comandos apresentados no material. Como o PDF tem duas
 páginas e funciona como referência operacional, a anotação mantém o mesmo foco:
 executar, inspecionar, construir e publicar containers sem acrescentar uma camada
 conceitual desnecessária.
+
+Esta é a primeira parte do módulo de implantação. Depois de construir e publicar
+a imagem do e-commerce, a [Aula 03.2](aula-03-tutorial-aws.md) usa o mesmo
+artefato em uma máquina remota.
 
 ## Material original
 
@@ -33,9 +37,21 @@ Uma **imagem** empacota a aplicação e suas dependências. Um **container** é 
 execução isolada dessa imagem. O parâmetro `-p` publica uma porta do container na
 máquina, enquanto `--network` conecta o container a uma rede Docker.
 
-```text
-requisição → porta 8080 da máquina → porta 8080 do container → aplicação
+```mermaid
+flowchart LR
+    A[Código do e-commerce] -->|docker build| B[Imagem versionada]
+    B -->|docker run| C[Container]
+    U[Cliente] --> P[Porta 8080 da máquina]
+    P --> C
+    C --> D[Aplicação na porta 8080]
 ```
+
+| Elemento | O que permanece | O que varia |
+|---|---|---|
+| `Dockerfile` | Instruções de construção | Muda com dependências e empacotamento |
+| Imagem | Artefato imutável e versionável | Uma nova versão gera outra imagem |
+| Container | Configuração de uma execução | Porta, rede e variáveis de ambiente |
+| Registro | Imagens disponíveis para download | Tags publicadas e permissões |
 
 ## Executar um container
 
@@ -82,6 +98,13 @@ remove esse container parado. A imagem continua disponível para novas execuçõ
 Quando um comando falhar, comece por `docker ps --all` e `docker logs app`. Eles
 mostram se o processo terminou e qual mensagem foi produzida pela aplicação.
 
+| Sintoma | Verificação inicial | Causa frequente |
+|---|---|---|
+| Nome já está em uso | `docker ps --all` | Container anterior não foi removido |
+| Porta não responde | `docker ps` | Mapeamento ausente ou aplicação encerrada |
+| Processo encerra ao iniciar | `docker logs app` | Configuração ou dependência ausente |
+| Imagem não é encontrada | `docker images` | Nome ou tag diferente do comando |
+
 ## Construir e publicar imagens
 
 Na pasta que contém o `Dockerfile`:
@@ -113,3 +136,8 @@ containers não é o mesmo que remover imagens.
 Veja também as referências rápidas de [Docker](../referencias/docker.md) e
 [Docker Hub](../referencias/docker-hub.md), que reúnem o fluxo completo em formato
 de consulta.
+
+## Próximo passo
+
+Use a imagem versionada na
+[Aula 03.2: Implantação manual na AWS](aula-03-tutorial-aws.md).

@@ -1,8 +1,10 @@
-# Aula 03 — Tutorial AWS
+# Aula 03.2: Implantação manual na AWS
 
 O tutorial descreve um deploy manual: acessar uma instância Ubuntu por SSH,
 instalar Docker, publicar uma imagem construída localmente e executá-la na
 máquina remota. Todos os valores operacionais foram substituídos por marcadores.
+
+[Voltar para a Aula 03.1](aula-03-docker.md)
 
 ## Material original
 
@@ -37,6 +39,15 @@ desses dados para o repositório.
 | Máquina local | Compilar, testar, construir e publicar a imagem |
 | Instância AWS | Baixar a imagem e executar o container |
 | Docker Hub | Armazenar a imagem que conecta os dois ambientes |
+
+```mermaid
+flowchart LR
+    A[Testes locais] --> B[Imagem versionada]
+    B --> C[Docker Hub]
+    C -->|docker pull| D[Instância AWS]
+    D --> E[Container do e-commerce]
+    E --> F[Verificação de saúde e logs]
+```
 
 ## Acesso por SSH
 
@@ -121,6 +132,31 @@ docker run --name app -p 8080:8080 USUARIO/minha-app:NOVA_VERSAO
 Parar e remover o container antigo libera o nome `app`. O `pull` garante que a
 versão desejada existe localmente antes da nova execução.
 
+## Verificação e reversão
+
+Um deploy só termina depois que a nova versão responde e seus sinais básicos são
+verificados.
+
+| Etapa | Comando ou ação | Resultado esperado |
+|---|---|---|
+| Confirmar execução | `docker ps` | Container aparece como ativo |
+| Inspecionar inicialização | `docker logs app` | Aplicação inicia sem erro inesperado |
+| Exercitar a API | Consultar o endpoint público autorizado | Resposta compatível com a versão |
+| Conferir versão | Comparar a tag implantada | Artefato esperado está em execução |
+
+Se a verificação falhar, remova o container novo e execute novamente a tag
+anterior, que deve continuar disponível no registro:
+
+```bash
+docker stop app
+docker rm app
+docker pull USUARIO/minha-app:VERSAO_ANTERIOR
+docker run --name app -p 8080:8080 USUARIO/minha-app:VERSAO_ANTERIOR
+```
+
+Usar apenas `latest` dificulta a reversão porque o nome não identifica qual
+artefato funcionava antes.
+
 ## Configuração e segurança
 
 Se a aplicação exigir variáveis de ambiente, mantenha apenas nomes e marcadores
@@ -144,3 +180,9 @@ O processo manual deixa claras as etapas do deploy, mas depende de uma pessoa e
 testes, construção, publicação e implantação, além de interromper a sequência
 quando uma validação falhar. Esse caminho é retomado na
 [Aula 04](aula-04-confiabilidade.md).
+
+## Continuidade
+
+- [Voltar para Docker, imagens e containers](aula-03-docker.md).
+- [Continuar para a Aula 04: Confiabilidade](aula-04-confiabilidade.md).
+- Consultar a [referência rápida de máquinas AWS](../referencias/aws.md).

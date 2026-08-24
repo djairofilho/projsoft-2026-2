@@ -21,11 +21,14 @@ e direto dos PDFs.
 
 -   :material-sitemap:{ .lg .middle } **Aula 01: Introdução**
 
-    Arquitetura, requisitos de qualidade, restrições e *trade-offs*.
+    Arquitetura, requisitos mensuráveis, decisões, restrições e *trade-offs*.
 
     **PDF com 37 páginas**
 
     [Estudar Introdução](aulas/aula-01-introducao.md)
+
+    [Requisitos de qualidade](aulas/aula-01-requisitos-qualidade.md) ·
+    [Decisões arquiteturais](aulas/aula-01-decisoes-arquiteturais.md)
 
 -   :material-tools:{ .lg .middle } **Aula 02: Manutenibilidade**
 
@@ -38,29 +41,25 @@ e direto dos PDFs.
     [Padrões fundamentais](aulas/aula-02-padroes-fundamentais.md) ·
     [Padrões complementares](aulas/aula-02-padroes-complementares.md)
 
--   :material-docker:{ .lg .middle } **Aula 03: Docker**
+-   :material-docker:{ .lg .middle } **Aula 03: Containers e implantação**
 
-    Containers, imagens, portas, redes, build e Docker Hub.
+    Imagens, containers, Docker Hub, implantação manual e reversão na AWS.
 
-    **PDF com 2 páginas**
+    **Dois materiais originais com 2 páginas cada**
 
-    [Consultar Docker](aulas/aula-03-docker.md)
-
--   :material-cloud-outline:{ .lg .middle } **Aula 03: Tutorial AWS**
-
-    SSH, instalação do Docker e execução da aplicação em uma máquina remota.
-
-    **PDF com 2 páginas**
-
-    [Seguir o tutorial AWS](aulas/aula-03-tutorial-aws.md)
+    [Docker, imagens e containers](aulas/aula-03-docker.md) ·
+    [Implantação manual na AWS](aulas/aula-03-tutorial-aws.md)
 
 -   :material-shield-check-outline:{ .lg .middle } **Aula 04: Confiabilidade**
 
-    Disponibilidade, testes, tratamento de erros, CI/CD e monitoramento.
+    Disponibilidade, testes, idempotência, CI/CD e observabilidade.
 
     **PDF com 15 páginas**
 
     [Estudar Confiabilidade](aulas/aula-04-confiabilidade.md)
+
+    [Testes, erros e idempotência](aulas/aula-04-testes-erros.md) ·
+    [Entrega e observabilidade](aulas/aula-04-entrega-observabilidade.md)
 
 </div>
 

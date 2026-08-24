@@ -74,14 +74,21 @@ nav:
   - Início: index.md
   - Aulas:
       - Visão geral: aulas/index.md
-      - Aula 01 — Introdução: aulas/aula-01-introducao.md
+      - "Aula 01: Arquitetura e qualidade":
+          - Visão geral: aulas/aula-01-introducao.md
+          - 01.1 Requisitos de qualidade: aulas/aula-01-requisitos-qualidade.md
+          - 01.2 Decisões e trade-offs: aulas/aula-01-decisoes-arquiteturais.md
       - "Aula 02: Manutenibilidade":
           - Visão geral e SOLID: aulas/aula-02-manutenibilidade.md
           - 02.1 Padrões fundamentais: aulas/aula-02-padroes-fundamentais.md
           - 02.2 Padrões complementares: aulas/aula-02-padroes-complementares.md
-      - Aula 03 — Docker: aulas/aula-03-docker.md
-      - Aula 03 — Tutorial AWS: aulas/aula-03-tutorial-aws.md
-      - Aula 04 — Confiabilidade: aulas/aula-04-confiabilidade.md
+      - "Aula 03: Containers e implantação":
+          - 03.1 Docker, imagens e containers: aulas/aula-03-docker.md
+          - 03.2 Implantação manual na AWS: aulas/aula-03-tutorial-aws.md
+      - "Aula 04: Confiabilidade":
+          - Visão geral: aulas/aula-04-confiabilidade.md
+          - 04.1 Testes, erros e idempotência: aulas/aula-04-testes-erros.md
+          - 04.2 Entrega e observabilidade: aulas/aula-04-entrega-observabilidade.md
   - Referências rápidas:
       - Docker: referencias/docker.md
       - Docker Hub: referencias/docker-hub.md

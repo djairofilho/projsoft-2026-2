@@ -11,7 +11,19 @@
 
 **Requisito de qualidade**
 : Condição de operação ou propriedade esperada, como segurança, desempenho ou
-  manutenibilidade.
+  manutenibilidade. Veja como especificá-lo na
+  [Aula 01.1](../aulas/aula-01-requisitos-qualidade.md).
+
+**Cenário de qualidade**
+: Descrição verificável de fonte, estímulo, ambiente, artefato, resposta e medida.
+
+**Restrição**
+: Limite de prazo, custo, tecnologia, regulação ou capacidade da equipe que reduz
+  o conjunto de alternativas viáveis.
+
+**Decisão arquitetural**
+: Escolha estrutural registrada com contexto, alternativas, consequências e
+  evidências. Veja a [Aula 01.2](../aulas/aula-01-decisoes-arquiteturais.md).
 
 **Trade-off**
 : Consequência de obter um benefício enquanto se aceita outro custo ou risco.
@@ -21,6 +33,16 @@
 
 **Disponibilidade**
 : Proporção de tempo em que um serviço permanece utilizável.
+
+**SLI**
+: Indicador que mede um aspecto do serviço, como proporção de checkouts
+  concluídos corretamente.
+
+**SLO**
+: Meta definida para um SLI em uma janela de tempo.
+
+**Orçamento de indisponibilidade**
+: Parcela tolerada de resultados fora da meta durante a janela do SLO.
 
 **Escalabilidade**
 : Capacidade de manter o serviço quando carga ou volume variam.
@@ -78,6 +100,10 @@
 **Container**
 : Execução isolada de uma imagem.
 
+**Idempotência**
+: Propriedade que permite repetir uma operação lógica sem produzir um novo efeito.
+  Veja a [Aula 04.1](../aulas/aula-04-testes-erros.md).
+
 **Integração contínua (CI)**
 : Integração frequente de código acompanhada por validações automáticas.
 
@@ -87,7 +113,8 @@
 
 **Observabilidade**
 : Capacidade de compreender o estado interno de um sistema a partir de sinais como
-  logs, métricas e rastreamento.
+  logs, métricas e rastreamento. Veja a
+  [Aula 04.2](../aulas/aula-04-entrega-observabilidade.md).
 
 ## Recursos de estudo
 
