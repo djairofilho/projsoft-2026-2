@@ -34,3 +34,10 @@ aulas:
     source_hash: 5b2e01ec0e8877b85cb915040b23ccb241a56b148deea8e1173223a43aca3a49
     pages: 15
     published: true
+  - order: 6
+    title: Aula 05 — Redes Docker
+    slug: aula-05-redes-docker
+    source_file: aula-05-redes-docker.pdf
+    source_hash: 8bab73258752e0d198af471b0cb1691383d5322d4e7ccdd07cc2898a4773657a
+    pages: 3
+    published: true

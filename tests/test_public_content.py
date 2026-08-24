@@ -68,8 +68,8 @@ class PublicContentTests(unittest.TestCase):
     def test_manifest_matches_published_pdfs(self) -> None:
         manifest = yaml.safe_load(MANIFEST.read_text(encoding="utf-8"))
         lessons = manifest["aulas"]
-        self.assertEqual(len(lessons), 5)
-        self.assertEqual(len({lesson["slug"] for lesson in lessons}), 5)
+        self.assertEqual(len(lessons), 6)
+        self.assertEqual(len({lesson["slug"] for lesson in lessons}), 6)
 
         for lesson in lessons:
             with self.subTest(lesson=lesson["slug"]):
