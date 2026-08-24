@@ -55,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -514,10 +516,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#material-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material original
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
         Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-comecar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de começar
       
     </span>
   </a>
@@ -536,10 +560,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacao-do-docker" class="md-nav__link">
+  <a href="#instalacao-do-docker-na-instancia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instalação do Docker
+        Instalação do Docker na instância
       
     </span>
   </a>
@@ -547,10 +571,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fluxo-de-deploy" class="md-nav__link">
+  <a href="#construcao-e-publicacao-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fluxo de deploy
+        Construção e publicação local
       
     </span>
   </a>
@@ -558,10 +582,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perguntas-de-revisao" class="md-nav__link">
+  <a href="#execucao-na-instancia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perguntas de revisão
+        Execução na instância
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-e-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração e segurança
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limite-do-fluxo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limite do fluxo manual
       
     </span>
   </a>
@@ -817,10 +863,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#material-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material original
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
         Objetivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-comecar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de começar
       
     </span>
   </a>
@@ -839,10 +907,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacao-do-docker" class="md-nav__link">
+  <a href="#instalacao-do-docker-na-instancia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instalação do Docker
+        Instalação do Docker na instância
       
     </span>
   </a>
@@ -850,10 +918,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fluxo-de-deploy" class="md-nav__link">
+  <a href="#construcao-e-publicacao-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fluxo de deploy
+        Construção e publicação local
       
     </span>
   </a>
@@ -861,10 +929,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perguntas-de-revisao" class="md-nav__link">
+  <a href="#execucao-na-instancia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perguntas de revisão
+        Execução na instância
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-e-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração e segurança
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limite-do-fluxo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limite do fluxo manual
       
     </span>
   </a>
@@ -940,59 +1030,128 @@
 
 
 <h1 id="aula-03-tutorial-aws">Aula 03 — Tutorial AWS<a class="headerlink" href="#aula-03-tutorial-aws" title="Permanent link">&para;</a></h1>
-<p><a class="md-button" href="../../assets/pdfs/2026-2/aula-03-tutorial-aws.pdf">Baixar o PDF original</a></p>
+<p>O tutorial descreve um deploy manual: acessar uma instância Ubuntu por SSH,
+instalar Docker, publicar uma imagem construída localmente e executá-la na
+máquina remota. Todos os valores operacionais foram substituídos por marcadores.</p>
+<h2 id="material-original">Material original<a class="headerlink" href="#material-original" title="Permanent link">&para;</a></h2>
+<p><iframe
+  class="pdf-preview"
+  src="../../assets/pdfs/2026-2/aula-03-tutorial-aws.pdf"
+  title="Visualização do PDF da Aula 03: Tutorial AWS">
+</iframe>
+</p>
+<div class="pdf-preview-actions">
+<p><a class="md-button md-button--primary" href="../../assets/pdfs/2026-2/aula-03-tutorial-aws.pdf">Abrir ou baixar o PDF</a></p>
+<p class="pdf-preview-note">2 páginas. O visualizador usa o leitor de PDF do navegador.</p>
+</div>
 <h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Acessar uma máquina remota por SSH.</li>
 <li>Preparar uma instância Ubuntu para executar Docker.</li>
-<li>Publicar uma imagem local e executá-la remotamente.</li>
-<li>Repetir o deploy sem expor chaves, IPs ou senhas.</li>
+<li>Separar as etapas locais das etapas remotas.</li>
+<li>Publicar uma imagem e substituir a versão em execução.</li>
+<li>Fazer o processo sem expor chaves, endereços ou senhas.</li>
 </ul>
+<h2 id="antes-de-comecar">Antes de começar<a class="headerlink" href="#antes-de-comecar" title="Permanent link">&para;</a></h2>
+<p>Você precisa de uma instância acessível, uma chave privada obtida pelo canal
+autorizado e uma imagem que possa ser publicada no Docker Hub. Não copie nenhum
+desses dados para o repositório.</p>
+<table>
+<thead>
+<tr>
+<th>Onde</th>
+<th>Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Máquina local</td>
+<td>Compilar, testar, construir e publicar a imagem</td>
+</tr>
+<tr>
+<td>Instância AWS</td>
+<td>Baixar a imagem e executar o container</td>
+</tr>
+<tr>
+<td>Docker Hub</td>
+<td>Armazenar a imagem que conecta os dois ambientes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="acesso-por-ssh">Acesso por SSH<a class="headerlink" href="#acesso-por-ssh" title="Permanent link">&para;</a></h2>
-<p>No Linux, macOS, WSL ou Git Bash, proteja a chave e conecte-se usando valores
-locais:</p>
+<p>SSH, ou <em>Secure Shell</em>, permite operar o terminal de uma máquina remota por um
+canal criptografado. Em Linux, macOS, WSL ou Git Bash, restrinja a chave e inicie
+a conexão:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>CAMINHO_DA_CHAVE.pem
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ssh<span class="w"> </span>-i<span class="w"> </span>CAMINHO_DA_CHAVE.pem<span class="w"> </span>ubuntu@IP_DA_MAQUINA
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ssh<span class="w"> </span>-i<span class="w"> </span>CAMINHO_DA_CHAVE.pem<span class="w"> </span>ubuntu@ENDERECO_DA_MAQUINA
 </span></code></pre></div>
+<p><code>chmod 400</code> permite que apenas o proprietário leia o arquivo. O cliente SSH pode
+recusar uma chave com permissões abertas demais. No Windows, use WSL ou Git Bash
+para seguir o mesmo formato de comando.</p>
 <div class="admonition danger">
-<p class="admonition-title">Nunca publique a chave</p>
-<p>Uma chave <code>.pem</code> concede acesso à infraestrutura. Ela não deve ser copiada
-para este repositório, enviada em mensagens ou incluída em capturas de tela.</p>
+<p class="admonition-title">A chave privada não faz parte do projeto</p>
+<p>Um arquivo <code>.pem</code> concede acesso à infraestrutura. Não o adicione ao Git, não
+o envie em mensagens e não mostre seu conteúdo ou caminho em capturas públicas.</p>
 </div>
-<h2 id="instalacao-do-docker">Instalação do Docker<a class="headerlink" href="#instalacao-do-docker" title="Permanent link">&para;</a></h2>
-<p>Use as instruções oficiais de instalação do
+<h2 id="instalacao-do-docker-na-instancia">Instalação do Docker na instância<a class="headerlink" href="#instalacao-do-docker-na-instancia" title="Permanent link">&para;</a></h2>
+<p>Na sessão remota, siga a documentação oficial para instalar o
 <a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine no Ubuntu</a>. Depois,
-adicione o usuário ao grupo Docker e atualize a sessão:</p>
+adicione o usuário da instância ao grupo Docker e atualize a sessão:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span>ubuntu
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>newgrp<span class="w"> </span>docker
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker<span class="w"> </span>version
 </span></code></pre></div>
-<h2 id="fluxo-de-deploy">Fluxo de deploy<a class="headerlink" href="#fluxo-de-deploy" title="Permanent link">&para;</a></h2>
-<p>Na máquina local:</p>
+<p>O primeiro comando altera os grupos do usuário. <code>newgrp docker</code> aplica o novo
+grupo à sessão atual. <code>docker version</code> confirma que cliente e serviço Docker estão
+disponíveis antes do deploy.</p>
+<h2 id="construcao-e-publicacao-local">Construção e publicação local<a class="headerlink" href="#construcao-e-publicacao-local" title="Permanent link">&para;</a></h2>
+<p>Na raiz da aplicação, execute o build e produza a imagem:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./mvnw<span class="w"> </span>clean<span class="w"> </span>package
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app<span class="w"> </span>.
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app:VERSAO<span class="w"> </span>.
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app:VERSAO
 </span></code></pre></div>
-<p>Na máquina remota:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>logs<span class="w"> </span>app
+<p>No Windows, o projeto pode usar <code>mvnw.cmd</code> em vez de <code>./mvnw</code>. Uma etiqueta de
+versão explícita torna o deploy reproduzível e permite identificar exatamente o
+artefato em execução.</p>
+<p>O build da aplicação ocorre antes do build da imagem quando o <code>Dockerfile</code> espera
+o arquivo gerado pelo Maven. Se o projeto usa um build em múltiplas etapas, essa
+compilação pode estar dentro do próprio <code>Dockerfile</code>.</p>
+<h2 id="execucao-na-instancia">Execução na instância<a class="headerlink" href="#execucao-na-instancia" title="Permanent link">&para;</a></h2>
+<p>De volta ao terminal remoto:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app:VERSAO
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>USUARIO/minha-app:VERSAO
 </span></code></pre></div>
-<p>Para substituir a versão em execução:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>app
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app
+<p>Em outro terminal, ou depois de executar em segundo plano com <code>-d</code>, inspecione:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>--all
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>app
 </span></code></pre></div>
-<p>O processo manual ajuda a entender as etapas. Em produção, um pipeline deve
-automatizar build, testes, publicação e deploy, parando quando uma validação falha.</p>
-<h2 id="perguntas-de-revisao">Perguntas de revisão<a class="headerlink" href="#perguntas-de-revisao" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Por que a permissão da chave SSH deve ser restrita?</li>
-<li>Quais etapas acontecem localmente e quais acontecem na instância?</li>
-<li>Por que <code>docker pull</code> deve ocorrer antes de reiniciar a aplicação?</li>
-<li>O que ainda falta nesse fluxo para caracterizá-lo como entrega contínua?</li>
-</ol>
+<p>Para substituir a versão:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>app
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app:NOVA_VERSAO
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app:NOVA_VERSAO
+</span></code></pre></div>
+<p>Parar e remover o container antigo libera o nome <code>app</code>. O <code>pull</code> garante que a
+versão desejada existe localmente antes da nova execução.</p>
+<h2 id="configuracao-e-seguranca">Configuração e segurança<a class="headerlink" href="#configuracao-e-seguranca" title="Permanent link">&para;</a></h2>
+<p>Se a aplicação exigir variáveis de ambiente, mantenha apenas nomes e marcadores
+na documentação:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">NOME_DA_VARIAVEL</span><span class="o">=</span>VALOR_FORNECIDO_EM_AMBIENTE_SEGURO<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>USUARIO/minha-app:VERSAO
+</span></code></pre></div>
+<p>Senhas reais não devem aparecer no comando compartilhado, em arquivos rastreados
+ou no histórico do shell. Em um ambiente de produção, use gestão de segredos,
+restrição de portas, atualização da instância e permissões mínimas.</p>
+<h2 id="limite-do-fluxo-manual">Limite do fluxo manual<a class="headerlink" href="#limite-do-fluxo-manual" title="Permanent link">&para;</a></h2>
+<p>O processo manual deixa claras as etapas do deploy, mas depende de uma pessoa e
+é fácil executar comandos fora de ordem. Um pipeline de entrega deve automatizar
+testes, construção, publicação e implantação, além de interromper a sequência
+quando uma validação falhar. Esse caminho é retomado na
+<a href="../aula-04-confiabilidade/">Aula 04</a>.</p>
 
 
 

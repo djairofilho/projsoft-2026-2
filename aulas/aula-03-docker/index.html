@@ -55,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -486,6 +488,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#material-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material original
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -497,10 +510,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modelo-mental" class="md-nav__link">
+  <a href="#imagem-container-porta-e-rede" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modelo mental
+        Imagem, container, porta e rede
       
     </span>
   </a>
@@ -508,10 +521,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fluxo-essencial" class="md-nav__link">
+  <a href="#executar-um-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fluxo essencial
+        Executar um container
       
     </span>
   </a>
@@ -519,10 +532,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagens-e-docker-hub" class="md-nav__link">
+  <a href="#inspecionar-e-controlar-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imagens e Docker Hub
+        Inspecionar e controlar containers
       
     </span>
   </a>
@@ -530,10 +543,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perguntas-de-revisao" class="md-nav__link">
+  <a href="#construir-e-publicar-imagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perguntas de revisão
+        Construir e publicar imagens
       
     </span>
   </a>
@@ -817,6 +830,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#material-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material original
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -828,10 +852,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modelo-mental" class="md-nav__link">
+  <a href="#imagem-container-porta-e-rede" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modelo mental
+        Imagem, container, porta e rede
       
     </span>
   </a>
@@ -839,10 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fluxo-essencial" class="md-nav__link">
+  <a href="#executar-um-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fluxo essencial
+        Executar um container
       
     </span>
   </a>
@@ -850,10 +874,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagens-e-docker-hub" class="md-nav__link">
+  <a href="#inspecionar-e-controlar-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imagens e Docker Hub
+        Inspecionar e controlar containers
       
     </span>
   </a>
@@ -861,10 +885,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perguntas-de-revisao" class="md-nav__link">
+  <a href="#construir-e-publicar-imagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perguntas de revisão
+        Construir e publicar imagens
       
     </span>
   </a>
@@ -940,57 +964,109 @@
 
 
 <h1 id="aula-03-docker">Aula 03 — Docker<a class="headerlink" href="#aula-03-docker" title="Permanent link">&para;</a></h1>
-<p><a class="md-button" href="../../assets/pdfs/2026-2/aula-03-docker.pdf">Baixar o PDF original</a></p>
+<p>Este guia reúne os comandos apresentados no material. Como o PDF tem duas
+páginas e funciona como referência operacional, a anotação mantém o mesmo foco:
+executar, inspecionar, construir e publicar containers sem acrescentar uma camada
+conceitual desnecessária.</p>
+<h2 id="material-original">Material original<a class="headerlink" href="#material-original" title="Permanent link">&para;</a></h2>
+<p><iframe
+  class="pdf-preview"
+  src="../../assets/pdfs/2026-2/aula-03-docker.pdf"
+  title="Visualização do PDF da Aula 03: Docker">
+</iframe>
+</p>
+<div class="pdf-preview-actions">
+<p><a class="md-button md-button--primary" href="../../assets/pdfs/2026-2/aula-03-docker.pdf">Abrir ou baixar o PDF</a></p>
+<p class="pdf-preview-note">2 páginas. O visualizador usa o leitor de PDF do navegador.</p>
+</div>
 <h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Diferenciar imagem, container, porta e rede.</li>
-<li>Construir uma imagem e iniciar um container nomeado.</li>
-<li>Inspecionar logs e remover recursos que não são mais necessários.</li>
-<li>Publicar uma imagem no Docker Hub.</li>
+<li>Executar e nomear um container.</li>
+<li>Publicar uma porta e fornecer variáveis de ambiente.</li>
+<li>Inspecionar logs e o estado dos containers.</li>
+<li>Construir, listar, publicar e remover imagens.</li>
+<li>Conectar containers por uma rede Docker.</li>
 </ul>
-<h2 id="modelo-mental">Modelo mental<a class="headerlink" href="#modelo-mental" title="Permanent link">&para;</a></h2>
-<p>Uma <strong>imagem</strong> é um pacote imutável com aplicação e dependências. Um <strong>container</strong>
-é uma execução isolada dessa imagem. O mapeamento de portas conecta uma porta da
-máquina a uma porta exposta pela aplicação.</p>
+<h2 id="imagem-container-porta-e-rede">Imagem, container, porta e rede<a class="headerlink" href="#imagem-container-porta-e-rede" title="Permanent link">&para;</a></h2>
+<p>Uma <strong>imagem</strong> empacota a aplicação e suas dependências. Um <strong>container</strong> é uma
+execução isolada dessa imagem. O parâmetro <code>-p</code> publica uma porta do container na
+máquina, enquanto <code>--network</code> conecta o container a uma rede Docker.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>requisição → porta 8080 da máquina → porta 8080 do container → aplicação
 </span></code></pre></div>
-<h2 id="fluxo-essencial">Fluxo essencial<a class="headerlink" href="#fluxo-essencial" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app<span class="w"> </span>.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker<span class="w"> </span>logs<span class="w"> </span>app
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>docker<span class="w"> </span>stop<span class="w"> </span>app
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
+<h2 id="executar-um-container">Executar um container<a class="headerlink" href="#executar-um-container" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app
 </span></code></pre></div>
-<p>Variáveis de ambiente e redes podem ser acrescentadas durante a execução:</p>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--name app</code></td>
+<td>Define um nome estável para os próximos comandos</td>
+</tr>
+<tr>
+<td><code>-p 8080:8080</code></td>
+<td>Mapeia <code>porta_da_máquina:porta_da_aplicação</code></td>
+</tr>
+<tr>
+<td><code>-e CHAVE=valor</code></td>
+<td>Fornece uma variável de ambiente</td>
+</tr>
+<tr>
+<td><code>--network rede-app</code></td>
+<td>Conecta o container a uma rede existente</td>
+</tr>
+</tbody>
+</table>
+<p>Nomear o container é opcional, mas evita depender de um identificador aleatório.
+Sem a publicação de porta, a aplicação pode executar normalmente e ainda assim
+não ficar acessível pela porta da máquina.</p>
+<p>Um exemplo com rede e configuração:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>-d<span class="w"> </span>bridge<span class="w"> </span>rede-app
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--network<span class="w"> </span>rede-app<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">NOME_DA_VARIAVEL</span><span class="o">=</span>valor<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">APP_PROFILE</span><span class="o">=</span>dev<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>USUARIO/minha-app
 </span></code></pre></div>
-<h2 id="imagens-e-docker-hub">Imagens e Docker Hub<a class="headerlink" href="#imagens-e-docker-hub" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>images
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>rmi<span class="w"> </span>USUARIO/minha-app
+<h2 id="inspecionar-e-controlar-containers">Inspecionar e controlar containers<a class="headerlink" href="#inspecionar-e-controlar-containers" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>ps
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>--all
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>logs<span class="w"> </span>app
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>docker<span class="w"> </span>stop<span class="w"> </span>app
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
 </span></code></pre></div>
-<p>O nome da imagem deve começar pelo usuário ou pela organização quando o destino é
-o Docker Hub.</p>
+<p><code>docker ps</code> mostra apenas containers em execução. A opção <code>--all</code> inclui os que
+já pararam. <code>docker stop</code> encerra o processo, mas preserva o container; <code>docker rm</code>
+remove esse container parado. A imagem continua disponível para novas execuções.</p>
+<p>Quando um comando falhar, comece por <code>docker ps --all</code> e <code>docker logs app</code>. Eles
+mostram se o processo terminou e qual mensagem foi produzida pela aplicação.</p>
+<h2 id="construir-e-publicar-imagens">Construir e publicar imagens<a class="headerlink" href="#construir-e-publicar-imagens" title="Permanent link">&para;</a></h2>
+<p>Na pasta que contém o <code>Dockerfile</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app<span class="w"> </span>.
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>images
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app
+</span></code></pre></div>
+<p>O ponto final define o diretório enviado como contexto de build. Para publicar no
+Docker Hub, o nome da imagem precisa começar pelo usuário ou pela organização do
+repositório.</p>
+<p>Para remover uma imagem local que não está em uso:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rmi<span class="w"> </span>USUARIO/minha-app
+</span></code></pre></div>
+<p>Se houver um container baseado nela, remova primeiro o container. Parar e remover
+containers não é o mesmo que remover imagens.</p>
 <div class="admonition caution">
-<p class="admonition-title">Dados sensíveis</p>
-<p>Não grave senhas reais no Dockerfile, no comando compartilhado ou no histórico
-do shell. Em ambientes reais, use o mecanismo de segredos da plataforma.</p>
+<p class="admonition-title">Não compartilhe segredos em comandos</p>
+<p>Valores de <code>-e</code> podem aparecer no histórico do terminal e na configuração do
+container. Use apenas marcadores em documentação e o mecanismo de segredos da
+plataforma em ambientes reais.</p>
 </div>
-<p>Veja a <a href="../../referencias/docker/">referência rápida de Docker</a> para a lista
-consolidada de comandos.</p>
-<h2 id="perguntas-de-revisao">Perguntas de revisão<a class="headerlink" href="#perguntas-de-revisao" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Qual é a diferença entre parar e remover um container?</li>
-<li>O que significa <code>-p 8080:8080</code>?</li>
-<li>Por que nomear containers facilita a operação?</li>
-<li>Quando uma rede Docker é necessária?</li>
-<li>Por que uma imagem parada ainda ocupa espaço local?</li>
-</ol>
+<p>Veja também a <a href="../../referencias/docker/">referência rápida de Docker</a>, que reúne o
+fluxo completo em formato de consulta.</p>
 
 
 
