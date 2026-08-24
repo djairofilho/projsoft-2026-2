@@ -1,0 +1,36 @@
+aulas:
+  - order: 1
+    title: Aula 01 — Introdução
+    slug: aula-01-introducao
+    source_file: aula-01-introducao.pdf
+    source_hash: 3b5081b548415f41ace371b39c6a0500943eae07e802d7fab1a00d9f444fde8f
+    pages: 37
+    published: true
+  - order: 2
+    title: Aula 02 — Manutenibilidade
+    slug: aula-02-manutenibilidade
+    source_file: aula-02-manutenibilidade.pdf
+    source_hash: 38d4ab2c2b65aa2d0b32bd405c489b89b343137a8b6fd3424a3fecfde58459a6
+    pages: 18
+    published: true
+  - order: 3
+    title: Aula 03 — Docker
+    slug: aula-03-docker
+    source_file: aula-03-docker.pdf
+    source_hash: 26a98bd47276ef0a77ce51b85982060d97018509c706469d322dff5d4e405642
+    pages: 2
+    published: true
+  - order: 4
+    title: Aula 03 — Tutorial AWS
+    slug: aula-03-tutorial-aws
+    source_file: aula-03-tutorial-aws.pdf
+    source_hash: b6d890f78d44f12e5cdb92cb7901d651113af9c00e8c372fa0f7f34780bdb09f
+    pages: 2
+    published: true
+  - order: 5
+    title: Aula 04 — Confiabilidade
+    slug: aula-04-confiabilidade
+    source_file: aula-04-confiabilidade.pdf
+    source_hash: 5b2e01ec0e8877b85cb915040b23ccb241a56b148deea8e1173223a43aca3a49
+    pages: 15
+    published: true

@@ -1,0 +1,76 @@
+site_name: Projeto de Software — 2026.2
+site_description: Material de estudo de Projeto de Software e Gestão Ágil
+site_author: Djairo Dantas
+site_url: https://djairofilho.github.io/projsoft-2026-2/
+repo_url: https://github.com/djairofilho/projsoft-2026-2
+repo_name: djairofilho/projsoft-2026-2
+
+theme:
+  name: material
+  language: pt-BR
+  icon:
+    logo: material/sitemap
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Usar tema escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Usar tema claro
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Início: index.md
+  - Aulas:
+      - Visão geral: aulas/index.md
+      - Aula 01 — Introdução: aulas/aula-01-introducao.md
+      - Aula 02 — Manutenibilidade: aulas/aula-02-manutenibilidade.md
+      - Aula 03 — Docker: aulas/aula-03-docker.md
+      - Aula 03 — Tutorial AWS: aulas/aula-03-tutorial-aws.md
+      - Aula 04 — Confiabilidade: aulas/aula-04-confiabilidade.md
+  - Referências rápidas:
+      - Docker: referencias/docker.md
+      - AWS: referencias/aws.md
+      - Glossário: referencias/glossario.md
+  - Fontes e atribuição: fontes.md
