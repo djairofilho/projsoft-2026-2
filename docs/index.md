@@ -107,4 +107,6 @@ Use estas páginas durante exercícios e implementação:
 - [Máquinas AWS](referencias/aws.md): acesso remoto e fluxo seguro de deploy;
 - [Glossário](referencias/glossario.md): conceitos de arquitetura e requisitos de
   qualidade;
+- [Bibliografia e O’Reilly](referencias/bibliografia.md): acesso institucional e
+  leituras recomendadas para aprofundar as aulas.
 - [Fontes e atribuição](fontes.md): origem dos materiais e aviso de direitos.

@@ -88,3 +88,15 @@
 **Observabilidade**
 : Capacidade de compreender o estado interno de um sistema a partir de sinais como
   logs, métricas e rastreamento.
+
+## Recursos de estudo
+
+**Biblioteca Telles**
+: Biblioteca do Insper que reúne o catálogo e o acesso institucional às bases de
+  dados. O login remoto nas bases digitais é feito pelo OpenAthens.
+
+**O’Reilly Learning**
+: Plataforma de livros, cursos e vídeos técnicos disponível aos usuários
+  elegíveis do Insper por acesso institucional. Veja o passo a passo e os livros
+  indicados na página de
+  [bibliografia e acesso à O’Reilly](bibliografia.md).
