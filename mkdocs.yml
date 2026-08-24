@@ -5,6 +5,9 @@ site_url: https://djairofilho.github.io/projsoft-2026-2/
 repo_url: https://github.com/djairofilho/projsoft-2026-2
 repo_name: djairofilho/projsoft-2026-2
 
+extra_css:
+  - assets/stylesheets/extra.css
+
 theme:
   name: material
   language: pt-BR

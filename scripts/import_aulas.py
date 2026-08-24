@@ -75,7 +75,19 @@ def scaffold_note(path: Path, title: str, pdf_name: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     body = f"""# {title}
 
-[Baixar o PDF original](../assets/pdfs/2026-2/{pdf_name}){{ .md-button }}
+## Material original
+
+<iframe
+  class="pdf-preview"
+  src="../../assets/pdfs/2026-2/{pdf_name}"
+  title="Visualização do PDF: {title}">
+</iframe>
+
+<div class="pdf-preview-actions" markdown>
+[Abrir ou baixar o PDF](../assets/pdfs/2026-2/{pdf_name}){{ .md-button .md-button--primary }}
+
+<p class="pdf-preview-note">O visualizador usa o leitor de PDF do navegador.</p>
+</div>
 
 ## Objetivos
 
@@ -88,10 +100,6 @@ Adicione aqui um resumo do material.
 ## Conceitos-chave
 
 - Conceito a revisar.
-
-## Perguntas de revisão
-
-1. Qual é a principal ideia desta aula?
 """
     path.write_text(body, encoding="utf-8", newline="\n")
 

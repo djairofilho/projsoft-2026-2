@@ -1,0 +1,30 @@
+.pdf-preview {
+  display: block;
+  width: 100%;
+  height: clamp(34rem, 76vh, 52rem);
+  margin: 1rem 0 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  background: var(--md-code-bg-color);
+}
+
+.pdf-preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.pdf-preview-note {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.75rem;
+}
+
+@media screen and (max-width: 44.9844em) {
+  .pdf-preview {
+    height: 68vh;
+    min-height: 28rem;
+  }
+}

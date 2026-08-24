@@ -47,6 +47,17 @@ class PublicContentTests(unittest.TestCase):
                 self.assertEqual(len(PdfReader(pdf).pages), lesson["pages"])
                 self.assertTrue(lesson["published"])
 
+    def test_lessons_embed_their_source_pdf(self) -> None:
+        manifest = yaml.safe_load(MANIFEST.read_text(encoding="utf-8"))
+
+        for lesson in manifest["aulas"]:
+            with self.subTest(lesson=lesson["slug"]):
+                note = REPOSITORY / "docs" / "aulas" / f"{lesson['slug']}.md"
+                text = note.read_text(encoding="utf-8")
+                self.assertIn('class="pdf-preview"', text)
+                self.assertIn(lesson["source_file"], text)
+                self.assertNotIn("Perguntas de revisão", text)
+
     def test_repository_has_no_operational_secrets(self) -> None:
         forbidden_names = {"maquina.txt", "maquinas_geral.csv"}
         ipv4 = re.compile(r"(?<!\d)(?:\d{1,3}\.){3}\d{1,3}(?!\d)")
