@@ -1,4 +1,4 @@
-# Referência rápida — AWS
+# Referência rápida: Máquinas AWS
 
 ## Conexão segura
 

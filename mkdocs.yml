@@ -78,6 +78,6 @@ nav:
   - Referências rápidas:
       - Docker: referencias/docker.md
       - Docker Hub: referencias/docker-hub.md
-      - AWS: referencias/aws.md
+      - Máquinas AWS: referencias/aws.md
       - Glossário: referencias/glossario.md
   - Fontes e atribuição: fontes.md
