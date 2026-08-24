@@ -12,13 +12,13 @@
         <meta name="author" content="Djairo Dantas">
       
       
-        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/aulas/aula-04-confiabilidade/">
+        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/aulas/aula-04-testes-erros/">
       
       
-        <link rel="prev" href="../aula-03-tutorial-aws/">
+        <link rel="prev" href="../aula-04-confiabilidade/">
       
       
-        <link rel="next" href="../aula-04-testes-erros/">
+        <link rel="next" href="../aula-04-entrega-observabilidade/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Visão geral - Projeto de Software — 2026.2</title>
+        <title>04.1 Testes, erros e idempotência - Projeto de Software — 2026.2</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-04-confiabilidade" class="md-skip">
+        <a href="#aula-041-testes-erros-e-idempotencia" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visão geral
+              04.1 Testes, erros e idempotência
             
           </span>
         </div>
@@ -843,6 +843,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula-04-confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -862,7 +890,7 @@
   <span class="md-ellipsis">
     
   
-    Visão geral
+    04.1 Testes, erros e idempotência
   
 
     
@@ -880,7 +908,7 @@
   <span class="md-ellipsis">
     
   
-    Visão geral
+    04.1 Testes, erros e idempotência
   
 
     
@@ -906,17 +934,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material-original" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Material original
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -928,43 +945,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#confiabilidade-e-disponibilidade" class="md-nav__link">
+  <a href="#testar-o-risco-nao-apenas-o-metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confiabilidade e disponibilidade
+        Testar o risco, não apenas o método
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testar o risco, não apenas o método">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-teste-sem-comportamento-observavel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: teste sem comportamento observável
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#meta-e-orcamento-de-indisponibilidade" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#depois-regra-importante-explicita" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Meta e orçamento de indisponibilidade
+        Depois: regra importante explícita
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#confiabilidade-ao-longo-do-ciclo" class="md-nav__link">
+  <a href="#contratos-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confiabilidade ao longo do ciclo
+        Contratos de erro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contratos de erro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-toda-falha-parece-sucesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: toda falha parece sucesso
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#escolha-a-subaula" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#depois-condicao-conhecida-vira-resposta-estavel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escolha a subaula
+        Depois: condição conhecida vira resposta estável
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idempotencia-no-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idempotência no checkout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Idempotência no checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-cada-tentativa-cria-um-novo-efeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: cada tentativa cria um novo efeito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depois-a-chave-identifica-a-operacao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depois: a chave identifica a operação lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próximo passo
       
     </span>
   </a>
@@ -975,34 +1076,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aula-04-testes-erros/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    04.1 Testes, erros e idempotência
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1316,17 +1389,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material-original" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Material original
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1338,43 +1400,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#confiabilidade-e-disponibilidade" class="md-nav__link">
+  <a href="#testar-o-risco-nao-apenas-o-metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confiabilidade e disponibilidade
+        Testar o risco, não apenas o método
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testar o risco, não apenas o método">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-teste-sem-comportamento-observavel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: teste sem comportamento observável
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#meta-e-orcamento-de-indisponibilidade" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#depois-regra-importante-explicita" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Meta e orçamento de indisponibilidade
+        Depois: regra importante explícita
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#confiabilidade-ao-longo-do-ciclo" class="md-nav__link">
+  <a href="#contratos-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confiabilidade ao longo do ciclo
+        Contratos de erro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contratos de erro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-toda-falha-parece-sucesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: toda falha parece sucesso
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#escolha-a-subaula" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#depois-condicao-conhecida-vira-resposta-estavel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escolha a subaula
+        Depois: condição conhecida vira resposta estável
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idempotencia-no-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idempotência no checkout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Idempotência no checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-cada-tentativa-cria-um-novo-efeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: cada tentativa cria um novo efeito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depois-a-chave-identifica-a-operacao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depois: a chave identifica a operação lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próximo passo
       
     </span>
   </a>
@@ -1442,7 +1588,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../aula-04-confiabilidade/" class="md-path__link">
           
   <span class="md-ellipsis">
     Aula 04: Confiabilidade
@@ -1467,163 +1613,231 @@
   
 
 
-<h1 id="aula-04-confiabilidade">Aula 04: Confiabilidade<a class="headerlink" href="#aula-04-confiabilidade" title="Permanent link">&para;</a></h1>
-<p>Confiabilidade é a capacidade de o software produzir resultados corretos e
-consistentes. Ela depende de decisões tomadas durante desenvolvimento, entrega e
-operação, não apenas da infraestrutura onde o sistema executa.</p>
-<h2 id="material-original">Material original<a class="headerlink" href="#material-original" title="Permanent link">&para;</a></h2>
-<p><iframe
-  class="pdf-preview"
-  src="../../assets/pdfs/2026-2/aula-04-confiabilidade.pdf"
-  title="Visualização do PDF da Aula 04: Confiabilidade">
-</iframe>
-</p>
-<div class="pdf-preview-actions">
-<p><a class="md-button md-button--primary" href="../../assets/pdfs/2026-2/aula-04-confiabilidade.pdf">Abrir ou baixar o PDF</a></p>
-<p class="pdf-preview-note">15 páginas. O visualizador usa o leitor de PDF do navegador.</p>
-</div>
+<h1 id="aula-041-testes-erros-e-idempotencia">Aula 04.1: Testes, erros e idempotência<a class="headerlink" href="#aula-041-testes-erros-e-idempotencia" title="Permanent link">&para;</a></h1>
+<p><a href="../aula-04-confiabilidade/">Voltar para a Aula 04</a></p>
+<p>O checkout precisa preservar regras de negócio e produzir respostas previsíveis
+mesmo quando uma entrada é inválida, uma dependência falha ou o cliente repete a
+operação.</p>
 <h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Diferenciar confiabilidade de disponibilidade.</li>
-<li>Interpretar metas e orçamentos de indisponibilidade.</li>
-<li>Relacionar prevenção, entrega e operação.</li>
-<li>Escolher evidências que representem a experiência do usuário.</li>
+<li>Escolher níveis de teste a partir do risco.</li>
+<li>Separar condições conhecidas de falhas inesperadas.</li>
+<li>Manter contratos HTTP estáveis.</li>
+<li>Evitar efeitos duplicados com idempotência.</li>
 </ul>
-<h2 id="confiabilidade-e-disponibilidade">Confiabilidade e disponibilidade<a class="headerlink" href="#confiabilidade-e-disponibilidade" title="Permanent link">&para;</a></h2>
-<p>Um sistema confiável produz o resultado correto de maneira consistente.
-Disponibilidade mede a proporção de tempo em que o serviço permanece utilizável.
-As duas propriedades não são sinônimas.</p>
-<p>Uma API pode responder rapidamente com status <code>200</code> e calcular um total
-incorreto. Ela está disponível do ponto de vista da rede, mas não é confiável.
-Também pode recusar corretamente uma entrada inválida com <code>400</code>; essa resposta
-não representa indisponibilidade.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>disponibilidade = tempo operacional / tempo total observado
-</span></code></pre></div>
-<p>Na prática, a equipe precisa definir o que conta como operacional. Responder
-abaixo de uma meta de latência, concluir a transação e produzir o estado correto
-podem fazer parte do indicador.</p>
-<h2 id="meta-e-orcamento-de-indisponibilidade">Meta e orçamento de indisponibilidade<a class="headerlink" href="#meta-e-orcamento-de-indisponibilidade" title="Permanent link">&para;</a></h2>
+<h2 id="testar-o-risco-nao-apenas-o-metodo">Testar o risco, não apenas o método<a class="headerlink" href="#testar-o-risco-nao-apenas-o-metodo" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: right;">Meta</th>
-<th style="text-align: right;">Indisponibilidade aproximada por ano</th>
-<th style="text-align: right;">Por mês</th>
+<th>Nível</th>
+<th>Escopo</th>
+<th>Risco que ajuda a localizar</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">99%</td>
-<td style="text-align: right;">3 dias, 15 h e 39 min</td>
-<td style="text-align: right;">7 h e 18 min</td>
-</tr>
-<tr>
-<td style="text-align: right;">99,9%</td>
-<td style="text-align: right;">8 h e 45 min</td>
-<td style="text-align: right;">43 min</td>
-</tr>
-<tr>
-<td style="text-align: right;">99,99%</td>
-<td style="text-align: right;">52 min</td>
-<td style="text-align: right;">4 min e 23 s</td>
-</tr>
-<tr>
-<td style="text-align: right;">99,999%</td>
-<td style="text-align: right;">5 min e 15 s</td>
-<td style="text-align: right;">26 s</td>
-</tr>
-</tbody>
-</table>
-<p>Esse tempo funciona como um orçamento de indisponibilidade. Metas maiores exigem
-redundância, automação e resposta a incidentes mais rigorosas. O custo aumenta,
-por isso o número deve refletir impacto de negócio e expectativa dos usuários.</p>
-<p>No checkout, uma medida útil combina disponibilidade com correção: percentual
-de confirmações concluídas sem duplicar pagamento ou deixar pedido inconsistente.</p>
-<h2 id="confiabilidade-ao-longo-do-ciclo">Confiabilidade ao longo do ciclo<a class="headerlink" href="#confiabilidade-ao-longo-do-ciclo" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart LR
-    A[Requisito mensurável] --&gt; B[Testes e contratos de erro]
-    B --&gt; C[Integração e entrega contínuas]
-    C --&gt; D[Verificação do deploy]
-    D --&gt; E[Logs, métricas e rastreamento]
-    E --&gt; F[Incidente e aprendizado]
-    F --&gt; B</code></pre>
-<table>
-<thead>
-<tr>
-<th>Etapa</th>
-<th>Pergunta</th>
-<th>Evidência</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Desenvolvimento</td>
-<td>A regra conhecida continua correta?</td>
-<td>Testes automatizados</td>
+<td>Unidade</td>
+<td>Regra ou componente isolado</td>
+<td>Cálculo ou transição de estado incorreta</td>
 </tr>
 <tr>
 <td>Integração</td>
-<td>A mudança pode entrar na versão principal?</td>
-<td>Pipeline aprovado</td>
+<td>Banco, fila ou serviço externo</td>
+<td>Contrato e configuração incompatíveis</td>
 </tr>
 <tr>
-<td>Entrega</td>
-<td>O artefato certo foi implantado com segurança?</td>
-<td>Tag, verificação e rollback</td>
-</tr>
-<tr>
-<td>Operação</td>
-<td>O usuário recebe o resultado esperado?</td>
-<td>Sinais técnicos e de negócio</td>
-</tr>
-<tr>
-<td>Aprendizado</td>
-<td>A mesma falha será detectada mais cedo?</td>
-<td>Novo teste, alerta ou decisão</td>
+<td>Ponta a ponta</td>
+<td>Fluxo como o usuário executa</td>
+<td>Falha entre várias camadas</td>
 </tr>
 </tbody>
 </table>
-<p>Confiabilidade não é um componente adicionado no final. Cada etapa reduz uma
-classe de risco e produz informação para a próxima.</p>
-<h2 id="escolha-a-subaula">Escolha a subaula<a class="headerlink" href="#escolha-a-subaula" title="Permanent link">&para;</a></h2>
+<p>Testes rápidos e isolados oferecem retorno frequente. Testes integrados aumentam
+confiança nas fronteiras, mas custam mais para preparar e diagnosticar. O conjunto
+deve refletir os riscos do sistema, não uma proporção rígida.</p>
+<h3 id="antes-teste-sem-comportamento-observavel">Antes: teste sem comportamento observável<a class="headerlink" href="#antes-teste-sem-comportamento-observavel" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Test</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">criaPedido</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">Pedido</span><span class="w"> </span><span class="n">pedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">criar</span><span class="p">(</span><span class="n">requisicao</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">assertNotNull</span><span class="p">(</span><span class="n">pedido</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>O teste passa mesmo se o total estiver errado, o cupom for ignorado ou o pedido
+começar em um estado inválido.</p>
+<h3 id="depois-regra-importante-explicita">Depois: regra importante explícita<a class="headerlink" href="#depois-regra-importante-explicita" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@Test</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">aplicaCupomUmaVezAoCriarPedido</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">Pedido</span><span class="w"> </span><span class="n">pedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">criar</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CriarPedido</span><span class="p">(</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span><span class="s">"livro"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigDecimal</span><span class="p">(</span><span class="s">"100.00"</span><span class="p">))),</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="s">"MENOS10"</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">));</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BigDecimal</span><span class="p">(</span><span class="s">"90.00"</span><span class="p">),</span><span class="w"> </span><span class="n">pedido</span><span class="p">.</span><span class="na">total</span><span class="p">());</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">StatusPedido</span><span class="p">.</span><span class="na">CRIADO</span><span class="p">,</span><span class="w"> </span><span class="n">pedido</span><span class="p">.</span><span class="na">status</span><span class="p">());</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>O nome descreve o cenário, os dados mostram a condição e as verificações cobrem
+resultados relevantes. Detalhes internos continuam livres para mudar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quando usar cada nível</p>
+<p>Use unidade para combinações de regra, integração para contratos reais e
+ponta a ponta para poucos fluxos críticos, como confirmar uma compra.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Quando não ampliar a suíte</p>
+<p>Não replique o mesmo cenário em todos os níveis sem um risco específico. A
+duplicação aumenta tempo e manutenção sem necessariamente aumentar confiança.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Custo introduzido</p>
+<p>Testes exigem dados, ambientes e diagnóstico. Testes instáveis ou acoplados a
+detalhes reduzem a confiança e atrasam mudanças legítimas.</p>
+</div>
+<h2 id="contratos-de-erro">Contratos de erro<a class="headerlink" href="#contratos-de-erro" title="Permanent link">&para;</a></h2>
+<p>Tratar um erro não significa esconder a exceção. A aplicação decide onde
+recuperar, onde converter uma condição conhecida e onde interromper o fluxo.</p>
 <table>
 <thead>
 <tr>
-<th>Se o problema está em...</th>
-<th>Estude primeiro</th>
+<th>Situação</th>
+<th style="text-align: right;">Código comum</th>
+<th>Ação esperada do consumidor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Regressões, respostas imprevisíveis ou operações repetidas</td>
-<td>Testes, erros e idempotência</td>
+<td>Entrada inválida</td>
+<td style="text-align: right;"><code>400</code></td>
+<td>Corrigir os dados antes de repetir</td>
 </tr>
 <tr>
-<td>Mudanças manuais, falhas de deploy ou diagnóstico lento</td>
-<td>Entrega e observabilidade</td>
+<td>Identidade ausente ou inválida</td>
+<td style="text-align: right;"><code>401</code></td>
+<td>Autenticar novamente</td>
+</tr>
+<tr>
+<td>Operação não permitida</td>
+<td style="text-align: right;"><code>403</code></td>
+<td>Não repetir com a mesma identidade</td>
+</tr>
+<tr>
+<td>Recurso inexistente</td>
+<td style="text-align: right;"><code>404</code></td>
+<td>Corrigir o identificador</td>
+</tr>
+<tr>
+<td>Conflito com o estado atual</td>
+<td style="text-align: right;"><code>409</code></td>
+<td>Atualizar a visão do estado</td>
+</tr>
+<tr>
+<td>Falha inesperada</td>
+<td style="text-align: right;"><code>500</code></td>
+<td>Não assumir que a entrada é inválida</td>
 </tr>
 </tbody>
 </table>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2zm4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4z"/></svg></span> <strong>04.1: Testes, erros e idempotência</strong></p>
-<p>Proteja as regras do pedido e mantenha contratos previsíveis diante de falhas.</p>
-<p><a href="../aula-04-testes-erros/">Estudar prevenção e tratamento de falhas</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3 14 .5.07L8.07 9.5a1.95 1.95 0 0 1 .52-1.91c.78-.79 2.04-.79 2.82 0 .53.52.7 1.26.52 1.91l2.57 2.57.5-.07c.18 0 .35 0 .5.07l3.57-3.57C19 8.35 19 8.18 19 8a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2c-.18 0-.35 0-.5-.07l-3.57 3.57c.07.15.07.32.07.5a2 2 0 0 1-2 2 2 2 0 0 1-2-2l.07-.5-2.57-2.57c-.32.07-.68.07-1 0L4.93 15.5 5 16a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2"/></svg></span> <strong>04.2: Entrega e observabilidade</strong></p>
-<p>Automatize a promoção do artefato e observe o checkout em execução.</p>
-<p><a href="../aula-04-entrega-observabilidade/">Estudar entrega e observabilidade</a></p>
-</li>
-</ul>
+<h3 id="antes-toda-falha-parece-sucesso">Antes: toda falha parece sucesso<a class="headerlink" href="#antes-toda-falha-parece-sucesso" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">criar</span><span class="p">(</span><span class="n">CriarPedido</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">service</span><span class="p">.</span><span class="na">criar</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">ok</span><span class="p">(</span><span class="s">"pedido criado"</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">ok</span><span class="p">(</span><span class="s">"erro: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">error</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>O status <code>200</code> prejudica clientes e monitoramento. A mensagem pode ainda expor
+detalhes internos ou dados sensíveis.</p>
+<h3 id="depois-condicao-conhecida-vira-resposta-estavel">Depois: condição conhecida vira resposta estável<a class="headerlink" href="#depois-condicao-conhecida-vira-resposta-estavel" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">PedidoDto</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">criar</span><span class="p">(</span><span class="n">CriarPedido</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">Pedido</span><span class="w"> </span><span class="n">pedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">criar</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">status</span><span class="p">(</span><span class="n">HttpStatus</span><span class="p">.</span><span class="na">CREATED</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="n">PedidoDto</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">pedido</span><span class="p">));</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nd">@ExceptionHandler</span><span class="p">(</span><span class="n">CupomInvalidoException</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">ErroDto</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">tratarCupom</span><span class="p">(</span><span class="n">CupomInvalidoException</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">badRequest</span><span class="p">()</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="p">.</span><span class="na">body</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ErroDto</span><span class="p">(</span><span class="s">"cupom_invalido"</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">.</span><span class="na">getMessage</span><span class="p">()));</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Falhas inesperadas devem ser registradas com um identificador de correlação e
+convertidas em resposta genérica, sem devolver rastreamento de pilha ou segredo.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quando criar um erro específico</p>
+<p>Modele uma condição quando o consumidor consegue tomar uma ação diferente e
+o contrato precisa permanecer estável.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">A porcentagem não substitui o cenário</p>
-<p>Uma meta de 99,9% é incompleta sem população, janela, operação medida e
-definição de sucesso. A métrica deve representar um resultado importante
-para o usuário, não apenas a saúde de uma máquina.</p>
+<p class="admonition-title">Quando não recuperar</p>
+<p>Não continue silenciosamente quando o estado pode estar inconsistente. Algumas
+falhas exigem interromper a operação e preservar evidência para diagnóstico.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Custo introduzido</p>
+<p>Um catálogo de erros precisa de nomes, documentação, testes e compatibilidade
+com consumidores.</p>
+</div>
+<h2 id="idempotencia-no-checkout">Idempotência no checkout<a class="headerlink" href="#idempotencia-no-checkout" title="Permanent link">&para;</a></h2>
+<p>Uma conexão pode cair depois que o pagamento foi aceito e antes que o cliente
+receba a resposta. Repetir a mesma requisição não deve produzir uma segunda
+cobrança.</p>
+<h3 id="antes-cada-tentativa-cria-um-novo-efeito">Antes: cada tentativa cria um novo efeito<a class="headerlink" href="#antes-cada-tentativa-cria-um-novo-efeito" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">Pagamento</span><span class="w"> </span><span class="nf">confirmar</span><span class="p">(</span><span class="n">Checkout</span><span class="w"> </span><span class="n">checkout</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">gateway</span><span class="p">.</span><span class="na">cobrar</span><span class="p">(</span><span class="n">checkout</span><span class="p">.</span><span class="na">total</span><span class="p">(),</span><span class="w"> </span><span class="n">checkout</span><span class="p">.</span><span class="na">cartao</span><span class="p">());</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="depois-a-chave-identifica-a-operacao-logica">Depois: a chave identifica a operação lógica<a class="headerlink" href="#depois-a-chave-identifica-a-operacao-logica" title="Permanent link">&para;</a></h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">Pagamento</span><span class="w"> </span><span class="nf">confirmar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">chaveIdempotencia</span><span class="p">,</span><span class="w"> </span><span class="n">Checkout</span><span class="w"> </span><span class="n">checkout</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pagamentos</span><span class="p">.</span><span class="na">buscarPorChave</span><span class="p">(</span><span class="n">chaveIdempotencia</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="p">.</span><span class="na">orElseGet</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cobrarERegistrar</span><span class="p">(</span><span class="n">chaveIdempotencia</span><span class="p">,</span><span class="w"> </span><span class="n">checkout</span><span class="p">));</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kd">private</span><span class="w"> </span><span class="n">Pagamento</span><span class="w"> </span><span class="nf">cobrarERegistrar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">chave</span><span class="p">,</span><span class="w"> </span><span class="n">Checkout</span><span class="w"> </span><span class="n">checkout</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">Pagamento</span><span class="w"> </span><span class="n">pagamento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gateway</span><span class="p">.</span><span class="na">cobrar</span><span class="p">(</span><span class="n">chave</span><span class="p">,</span><span class="w"> </span><span class="n">checkout</span><span class="p">.</span><span class="na">total</span><span class="p">());</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pagamentos</span><span class="p">.</span><span class="na">salvar</span><span class="p">(</span><span class="n">chave</span><span class="p">,</span><span class="w"> </span><span class="n">pagamento</span><span class="p">);</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>O armazenamento deve garantir unicidade da chave. Em uma aplicação real, a
+equipe também precisa decidir duração, concorrência, resposta em processamento e
+recuperação quando cobrar e persistir não formam uma única transação.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Cliente
+    participant API
+    participant Registro as Registro idempotente
+    participant Gateway
+    Cliente-&gt;&gt;API: confirmar(chave-123)
+    API-&gt;&gt;Registro: buscar(chave-123)
+    Registro--&gt;&gt;API: ausente
+    API-&gt;&gt;Gateway: cobrar(chave-123)
+    Gateway--&gt;&gt;API: aprovado
+    API-&gt;&gt;Registro: salvar resultado
+    API--&gt;&gt;Cliente: conexão interrompida
+    Cliente-&gt;&gt;API: confirmar(chave-123)
+    API-&gt;&gt;Registro: buscar(chave-123)
+    Registro--&gt;&gt;API: resultado aprovado
+    API--&gt;&gt;Cliente: mesmo resultado</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Quando usar</p>
+<p>Use em operações com efeito relevante que podem ser repetidas por cliente,
+rede, fila ou política de nova tentativa.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Quando não confundir</p>
+<p>Idempotência não substitui validação nem transforma duas compras diferentes
+em uma. A chave deve representar uma única intenção do usuário.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Custo introduzido</p>
+<p>É necessário armazenar chaves, controlar concorrência, expirar registros e
+definir o comportamento de tentativas ainda em processamento.</p>
+</div>
+<h2 id="proximo-passo">Próximo passo<a class="headerlink" href="#proximo-passo" title="Permanent link">&para;</a></h2>
+<p>Depois de proteger regras e contratos, automatize a promoção do artefato e
+observe o resultado na
+<a href="../aula-04-entrega-observabilidade/">Aula 04.2: Entrega e observabilidade</a>.</p>
 
 
 
@@ -1659,7 +1873,7 @@ para o usuário, não apenas a saúde de uma máquina.</p>
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../aula-03-tutorial-aws/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 03.2 Implantação manual na AWS">
+          <a href="../aula-04-confiabilidade/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visão geral">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1669,20 +1883,20 @@ para o usuário, não apenas a saúde de uma máquina.</p>
                 Anterior
               </span>
               <div class="md-ellipsis">
-                03.2 Implantação manual na AWS
+                Visão geral
               </div>
             </div>
           </a>
         
         
           
-          <a href="../aula-04-testes-erros/" class="md-footer__link md-footer__link--next" aria-label="Próximo: 04.1 Testes, erros e idempotência">
+          <a href="../aula-04-entrega-observabilidade/" class="md-footer__link md-footer__link--next" aria-label="Próximo: 04.2 Entrega e observabilidade">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                04.1 Testes, erros e idempotência
+                04.2 Entrega e observabilidade
               </div>
             </div>
             <div class="md-footer__button md-icon">

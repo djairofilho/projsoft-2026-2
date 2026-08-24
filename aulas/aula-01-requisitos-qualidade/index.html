@@ -12,13 +12,13 @@
         <meta name="author" content="Djairo Dantas">
       
       
-        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/aulas/aula-01-introducao/">
+        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/aulas/aula-01-requisitos-qualidade/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../aula-01-introducao/">
       
       
-        <link rel="next" href="../aula-01-requisitos-qualidade/">
+        <link rel="next" href="../aula-01-decisoes-arquiteturais/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Visão geral - Projeto de Software — 2026.2</title>
+        <title>01.1 Requisitos de qualidade - Projeto de Software — 2026.2</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-01-arquitetura-e-requisitos-de-qualidade" class="md-skip">
+        <a href="#aula-011-requisitos-de-qualidade" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visão geral
+              01.1 Requisitos de qualidade
             
           </span>
         </div>
@@ -426,6 +426,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula-01-introducao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -445,7 +473,7 @@
   <span class="md-ellipsis">
     
   
-    Visão geral
+    01.1 Requisitos de qualidade
   
 
     
@@ -463,7 +491,7 @@
   <span class="md-ellipsis">
     
   
-    Visão geral
+    01.1 Requisitos de qualidade
   
 
     
@@ -489,17 +517,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material-original" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Material original
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -511,10 +528,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-crud-e-necessario-mas-nao-diferencia-o-sistema" class="md-nav__link">
+  <a href="#o-problema-das-palavras-vagas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O CRUD é necessário, mas não diferencia o sistema
+        O problema das palavras vagas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O problema das palavras vagas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-intencao-sem-criterio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: intenção sem critério
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depois-cenarios-verificaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depois: cenários verificáveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-e-commerce-quatro-perspectivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Um e-commerce, quatro perspectivas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Um e-commerce, quatro perspectivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confiabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confiabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manutenibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manutenibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-interagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos interagem
       
     </span>
   </a>
@@ -522,10 +639,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura-como-sequencia-de-decisoes" class="md-nav__link">
+  <a href="#checklist-de-um-requisito-util" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Arquitetura como sequência de decisões
+        Checklist de um requisito útil
       
     </span>
   </a>
@@ -533,54 +650,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#requisitos-que-guiam-o-curso" class="md-nav__link">
+  <a href="#proximo-passo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisitos que guiam o curso
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nao-existe-solucao-perfeita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Não existe solução perfeita
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ia-como-apoio-a-engenharia" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IA como apoio à engenharia
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-pelas-subaulas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Continue pelas subaulas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trilha-da-disciplina" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trilha da disciplina
+        Próximo passo
       
     </span>
   </a>
@@ -591,34 +664,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aula-01-requisitos-qualidade/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    01.1 Requisitos de qualidade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1349,17 +1394,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material-original" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Material original
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1371,10 +1405,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-crud-e-necessario-mas-nao-diferencia-o-sistema" class="md-nav__link">
+  <a href="#o-problema-das-palavras-vagas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O CRUD é necessário, mas não diferencia o sistema
+        O problema das palavras vagas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O problema das palavras vagas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-intencao-sem-criterio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes: intenção sem critério
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depois-cenarios-verificaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depois: cenários verificáveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-e-commerce-quatro-perspectivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Um e-commerce, quatro perspectivas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Um e-commerce, quatro perspectivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confiabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confiabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manutenibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manutenibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-interagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos interagem
       
     </span>
   </a>
@@ -1382,10 +1516,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura-como-sequencia-de-decisoes" class="md-nav__link">
+  <a href="#checklist-de-um-requisito-util" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Arquitetura como sequência de decisões
+        Checklist de um requisito útil
       
     </span>
   </a>
@@ -1393,54 +1527,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#requisitos-que-guiam-o-curso" class="md-nav__link">
+  <a href="#proximo-passo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisitos que guiam o curso
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nao-existe-solucao-perfeita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Não existe solução perfeita
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ia-como-apoio-a-engenharia" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IA como apoio à engenharia
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-pelas-subaulas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Continue pelas subaulas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trilha-da-disciplina" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trilha da disciplina
+        Próximo passo
       
     </span>
   </a>
@@ -1508,7 +1598,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../aula-01-introducao/" class="md-path__link">
           
   <span class="md-ellipsis">
     Aula 01: Arquitetura e qualidade
@@ -1533,169 +1623,224 @@
   
 
 
-<h1 id="aula-01-arquitetura-e-requisitos-de-qualidade">Aula 01: Arquitetura e requisitos de qualidade<a class="headerlink" href="#aula-01-arquitetura-e-requisitos-de-qualidade" title="Permanent link">&para;</a></h1>
-<p>Implementar as funções de um sistema é apenas parte do problema. Arquitetura
-começa quando precisamos garantir que essas funções continuem corretas sob
-carga, falhas, ataques, mudanças e restrições reais de custo e prazo.</p>
-<h2 id="material-original">Material original<a class="headerlink" href="#material-original" title="Permanent link">&para;</a></h2>
-<p><iframe
-  class="pdf-preview"
-  src="../../assets/pdfs/2026-2/aula-01-introducao.pdf"
-  title="Visualização do PDF da Aula 01: Introdução">
-</iframe>
-</p>
-<div class="pdf-preview-actions">
-<p><a class="md-button md-button--primary" href="../../assets/pdfs/2026-2/aula-01-introducao.pdf">Abrir ou baixar o PDF</a></p>
-<p class="pdf-preview-note">37 páginas. O visualizador usa o leitor de PDF do navegador.</p>
-</div>
+<h1 id="aula-011-requisitos-de-qualidade">Aula 01.1: Requisitos de qualidade<a class="headerlink" href="#aula-011-requisitos-de-qualidade" title="Permanent link">&para;</a></h1>
+<p><a href="../aula-01-introducao/">Voltar para a Aula 01</a></p>
+<p>Um requisito de qualidade descreve como o sistema deve se comportar em uma
+situação relevante e qual resultado será considerado aceitável. Nesta subaula,
+o e-commerce transforma preocupações vagas em cenários verificáveis.</p>
 <h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Diferenciar requisitos funcionais de requisitos de qualidade.</li>
-<li>Entender arquitetura como decisão estrutural sob restrições.</li>
-<li>Reconhecer confiabilidade, escalabilidade, segurança e manutenibilidade.</li>
-<li>Relacionar uma decisão à evidência usada para avaliá-la.</li>
-<li>Entender o papel humano na decisão mesmo com o apoio de IA.</li>
+<li>Distinguir função, qualidade e restrição.</li>
+<li>Escrever cenários com contexto, estímulo, resposta e medida.</li>
+<li>Relacionar requisitos a sinais observáveis.</li>
+<li>Identificar conflitos entre requisitos.</li>
 </ul>
-<h2 id="o-crud-e-necessario-mas-nao-diferencia-o-sistema">O CRUD é necessário, mas não diferencia o sistema<a class="headerlink" href="#o-crud-e-necessario-mas-nao-diferencia-o-sistema" title="Permanent link">&para;</a></h2>
-<p>Muitas aplicações oferecem as mesmas operações de criar, consultar, atualizar e
-excluir dados. Um e-commerce, um banco e um sistema acadêmico podem ser descritos
-como conjuntos de CRUDs, mas operam sob riscos muito diferentes.</p>
-<p>No e-commerce usado ao longo das aulas, o checkout precisa calcular o total,
-registrar o pedido e iniciar o pagamento. Além de executar essas funções, deve
-evitar cobranças duplicadas, responder durante picos, proteger dados pessoais e
-permitir que novas regras sejam adicionadas com segurança.</p>
-<table>
-<thead>
-<tr>
-<th>Tipo de requisito</th>
-<th>Pergunta principal</th>
-<th>Exemplo no e-commerce</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Funcional</td>
-<td>O que o sistema faz?</td>
-<td>Finalizar uma compra</td>
-</tr>
-<tr>
-<td>Qualidade</td>
-<td>Como e sob quais condições ele faz?</td>
-<td>Processar uma tentativa repetida sem cobrar duas vezes</td>
-</tr>
-</tbody>
-</table>
-<p>“O sistema será rápido” não permite verificar o resultado. “95% dos checkouts
-responderão em até 800 ms com 300 usuários simultâneos” oferece cenário, métrica
-e limite para orientar e avaliar uma decisão.</p>
-<h2 id="arquitetura-como-sequencia-de-decisoes">Arquitetura como sequência de decisões<a class="headerlink" href="#arquitetura-como-sequencia-de-decisoes" title="Permanent link">&para;</a></h2>
-<p>Uma definição operacional para a disciplina é:</p>
+<h2 id="o-problema-das-palavras-vagas">O problema das palavras vagas<a class="headerlink" href="#o-problema-das-palavras-vagas" title="Permanent link">&para;</a></h2>
+<h3 id="antes-intencao-sem-criterio">Antes: intenção sem critério<a class="headerlink" href="#antes-intencao-sem-criterio" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>Arquitetura de software é tomar decisões estruturais para que um sistema atenda
-seus requisitos de qualidade dentro das restrições existentes.</p>
+<p>O checkout deve ser rápido, seguro e sempre disponível.</p>
 </blockquote>
-<pre class="mermaid"><code>flowchart LR
-    A[Cenário de negócio] --&gt; B[Requisito mensurável]
-    B --&gt; C[Restrições]
-    C --&gt; D[Alternativas]
-    D --&gt; E[Decisão arquitetural]
-    E --&gt; F[Evidência em execução]
-    F --&gt;|resultado insuficiente| D</code></pre>
-<p>Uma decisão é arquitetural quando alterá-la depois custa caro ou afeta muitas
-partes. Limites entre módulos, estratégia de persistência e forma de comunicação
-costumam ter esse peso. Um detalhe local de implementação normalmente não tem.</p>
-<h2 id="requisitos-que-guiam-o-curso">Requisitos que guiam o curso<a class="headerlink" href="#requisitos-que-guiam-o-curso" title="Permanent link">&para;</a></h2>
+<p>A frase comunica uma preocupação legítima, mas não informa carga, condição de
+falha, operação protegida nem limite aceitável. Duas equipes podem implementar
+soluções diferentes e ambas declarar que atenderam ao texto.</p>
+<h3 id="depois-cenarios-verificaveis">Depois: cenários verificáveis<a class="headerlink" href="#depois-cenarios-verificaveis" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Requisito</th>
-<th>Pergunta aplicada ao e-commerce</th>
-<th>Evidência possível</th>
+<th>Elemento</th>
+<th>Pergunta</th>
+<th>Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Confiabilidade</td>
-<td>O pedido termina no estado correto diante de falhas?</td>
-<td>Taxa de sucesso e pedidos inconsistentes</td>
+<td>Fonte</td>
+<td>Quem ou o que produz o estímulo?</td>
+<td>Cliente autenticado</td>
 </tr>
 <tr>
-<td>Escalabilidade</td>
-<td>O checkout suporta um pico de compras?</td>
-<td>Latência e vazão sob carga</td>
+<td>Estímulo</td>
+<td>O que acontece?</td>
+<td>Envia a confirmação do checkout</td>
 </tr>
 <tr>
-<td>Segurança</td>
-<td>Apenas pessoas autorizadas acessam dados e operações?</td>
-<td>Eventos de auditoria e testes de autorização</td>
+<td>Ambiente</td>
+<td>Em qual condição?</td>
+<td>Pico com 300 usuários simultâneos</td>
 </tr>
 <tr>
-<td>Manutenibilidade</td>
-<td>Uma regra nova exige mudanças localizadas?</td>
-<td>Arquivos alterados, tempo e falhas por mudança</td>
+<td>Artefato</td>
+<td>Qual parte é afetada?</td>
+<td>API de pedidos</td>
+</tr>
+<tr>
+<td>Resposta</td>
+<td>O que o sistema deve fazer?</td>
+<td>Criar um único pedido e responder</td>
+</tr>
+<tr>
+<td>Medida</td>
+<td>Qual limite define sucesso?</td>
+<td>95% em até 800 ms e nenhuma duplicação</td>
 </tr>
 </tbody>
 </table>
-<p>Observabilidade, usabilidade, rastreabilidade e custo atravessam esses requisitos.
-Uma fila pode absorver picos e melhorar resiliência, mas adiciona processamento
-assíncrono e torna o rastreamento mais difícil. Uma solução tecnicamente adequada
-ainda pode ser inviável por custo ou conhecimento da equipe.</p>
-<h2 id="nao-existe-solucao-perfeita">Não existe solução perfeita<a class="headerlink" href="#nao-existe-solucao-perfeita" title="Permanent link">&para;</a></h2>
-<p>Requisitos de qualidade disputam recursos e introduzem consequências. Essa troca
-é o <em>trade-off</em>. Antes de escolher uma tecnologia, a equipe precisa conhecer:</p>
-<ol>
-<li>o cenário que deve melhorar;</li>
-<li>a métrica e o limite esperados;</li>
-<li>as restrições de prazo, custo, equipe e tecnologia;</li>
-<li>as alternativas viáveis;</li>
-<li>os custos e novos riscos de cada alternativa;</li>
-<li>como observar o resultado e revisar a escolha.</li>
-</ol>
-<p>Pular diretamente do problema para uma ferramenta impede saber se ela resolve o
-problema certo. Cache, fila, container e padrão de projeto são mecanismos, não
-objetivos arquiteturais.</p>
-<h2 id="ia-como-apoio-a-engenharia">IA como apoio à engenharia<a class="headerlink" href="#ia-como-apoio-a-engenharia" title="Permanent link">&para;</a></h2>
-<p>IA pode acelerar implementação, exploração de alternativas e produção de
-testes. Ela não conhece automaticamente as restrições do negócio, os riscos
-aceitos nem a capacidade operacional da equipe. Toda sugestão ainda precisa ser
-confrontada com evidências, custos e consequências.</p>
-<h2 id="continue-pelas-subaulas">Continue pelas subaulas<a class="headerlink" href="#continue-pelas-subaulas" title="Permanent link">&para;</a></h2>
+<p>O requisito passa a orientar design, testes e monitoramento. O número não precisa
+ser perfeito na primeira versão, mas deve representar uma hipótese explícita que
+possa ser revisada com dados.</p>
+<h2 id="um-e-commerce-quatro-perspectivas">Um e-commerce, quatro perspectivas<a class="headerlink" href="#um-e-commerce-quatro-perspectivas" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    C[Confirmar checkout] --&gt; R[Confiabilidade]
+    C --&gt; E[Escalabilidade]
+    C --&gt; S[Segurança]
+    C --&gt; M[Manutenibilidade]
+    R --&gt; R1[Pedido e pagamento consistentes]
+    E --&gt; E1[Latência aceitável no pico]
+    S --&gt; S1[Dados e operações protegidos]
+    M --&gt; M1[Regras mudam de forma localizada]</code></pre>
+<h3 id="confiabilidade">Confiabilidade<a class="headerlink" href="#confiabilidade" title="Permanent link">&para;</a></h3>
+<p>Confiabilidade é produzir o resultado correto de maneira consistente. Para o
+checkout, disponibilidade da API não basta: responder <code>200</code> e cobrar duas vezes
+é uma falha grave.</p>
 <table>
 <thead>
 <tr>
-<th>Se você precisa...</th>
-<th>Continue em...</th>
+<th>Cenário</th>
+<th>Resposta esperada</th>
+<th>Medida</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transformar uma preocupação vaga em um requisito verificável</td>
-<td>01.1: Requisitos de qualidade</td>
+<td>Cliente repete a requisição após perder a conexão</td>
+<td>Reutilizar o resultado da primeira tentativa</td>
+<td>Nenhuma cobrança duplicada</td>
 </tr>
 <tr>
-<td>Comparar alternativas e justificar uma escolha</td>
-<td>01.2: Decisões e <em>trade-offs</em></td>
+<td>Transportadora fica indisponível</td>
+<td>Encerrar a espera e informar uma resposta conhecida</td>
+<td><em>Timeout</em> em até 2 s</td>
+</tr>
+<tr>
+<td>Banco reinicia durante a criação</td>
+<td>Não deixar pedido parcialmente persistido</td>
+<td>Zero pedidos sem estado válido</td>
 </tr>
 </tbody>
 </table>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8c0 2.4-1 4.5-2.7 6-1.4-1.3-3.3-2-5.3-2s-3.8.7-5.3 2C5 16.5 4 14.4 4 12a8 8 0 0 1 8-8m2 1.89c-.38.01-.74.26-.9.65l-1.29 3.23-.1.23c-.71.13-1.3.6-1.57 1.26-.41 1.03.09 2.19 1.12 2.6s2.19-.09 2.6-1.12c.26-.66.14-1.42-.29-1.98l.1-.26 1.29-3.21.01-.03c.2-.51-.05-1.09-.56-1.3-.13-.05-.26-.07-.41-.07M10 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1M7 9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m10 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> <strong>01.1: Requisitos de qualidade</strong></p>
-<p>Especifique cenários mensuráveis para checkout, catálogo e pagamento.</p>
-<p><a href="../aula-01-requisitos-qualidade/">Estudar requisitos de qualidade</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2z"/></svg></span> <strong>01.2: Decisões e trade-offs</strong></p>
-<p>Compare alternativas e registre decisões com suas consequências.</p>
-<p><a href="../aula-01-decisoes-arquiteturais/">Estudar decisões arquiteturais</a></p>
-</li>
-</ul>
+<h3 id="escalabilidade">Escalabilidade<a class="headerlink" href="#escalabilidade" title="Permanent link">&para;</a></h3>
+<p>Escalabilidade é manter o serviço aceitável quando carga ou volume variam. A
+primeira pergunta não é “qual tecnologia usar?”, mas “qual recurso ou meta deixa
+de atender ao cenário?”.</p>
+<table>
+<thead>
+<tr>
+<th>Cenário</th>
+<th>Resposta esperada</th>
+<th>Medida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campanha dobra acessos ao catálogo</td>
+<td>Continuar respondendo sem sobrecarregar o banco</td>
+<td>95% das consultas em até 300 ms</td>
+</tr>
+<tr>
+<td>Pico de confirmações de pedido</td>
+<td>Absorver a variação sem perder pedidos</td>
+<td>50 pedidos/s e nenhuma perda</td>
+</tr>
+</tbody>
+</table>
+<p>Cache pode reduzir latência, mas introduz invalidação e dados desatualizados.
+Fila pode absorver picos, mas altera o tempo de resposta e adiciona operação.</p>
+<h3 id="seguranca">Segurança<a class="headerlink" href="#seguranca" title="Permanent link">&para;</a></h3>
+<p>Segurança inclui autenticação, autorização, confidencialidade, integridade,
+auditoria e privacidade.</p>
+<table>
+<thead>
+<tr>
+<th>Cenário</th>
+<th>Resposta esperada</th>
+<th>Medida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cliente tenta consultar pedido de outra conta</td>
+<td>Negar sem revelar os dados</td>
+<td>100% dos testes de autorização aprovados</td>
+</tr>
+<tr>
+<td>Operação relevante é executada</td>
+<td>Registrar identidade, ação e resultado</td>
+<td>Evento de auditoria para toda alteração de estado</td>
+</tr>
+<tr>
+<td>Falha inesperada ocorre</td>
+<td>Responder sem segredo ou dado pessoal</td>
+<td>Nenhum dado sensível em resposta ou log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="manutenibilidade">Manutenibilidade<a class="headerlink" href="#manutenibilidade" title="Permanent link">&para;</a></h3>
+<p>Manutenibilidade aparece no esforço para entender, modificar, testar e corrigir.
+Ela é aprofundada na <a href="../aula-02-manutenibilidade/">Aula 02</a>.</p>
+<p>Um cenário possível é: ao adicionar uma política de desconto, a equipe deve
+alterar somente o ponto de extensão da política e seus testes, sem modificar
+persistência ou integração com pagamento.</p>
+<h2 id="requisitos-interagem">Requisitos interagem<a class="headerlink" href="#requisitos-interagem" title="Permanent link">&para;</a></h2>
+<p>Uma decisão raramente melhora apenas uma propriedade.</p>
+<table>
+<thead>
+<tr>
+<th>Decisão</th>
+<th>Benefício</th>
+<th>Consequência que precisa ser controlada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adicionar cache ao catálogo</td>
+<td>Menor latência</td>
+<td>Produto ou preço desatualizado</td>
+</tr>
+<tr>
+<td>Repetir chamada de pagamento</td>
+<td>Recuperação de falha transitória</td>
+<td>Cobrança duplicada sem idempotência</td>
+</tr>
+<tr>
+<td>Registrar corpo completo da requisição</td>
+<td>Diagnóstico mais fácil</td>
+<td>Exposição de dado pessoal</td>
+</tr>
+<tr>
+<td>Dividir uma classe em componentes</td>
+<td>Mudanças mais localizadas</td>
+<td>Mais contratos e navegação no código</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Não transforme a métrica em objetivo isolado</p>
+<p>Uma equipe pode reduzir latência servindo informação incorreta ou aumentar
+cobertura com testes que não detectam falhas relevantes. A medida só faz
+sentido junto com o cenário e o resultado para o usuário.</p>
 </div>
-<h2 id="trilha-da-disciplina">Trilha da disciplina<a class="headerlink" href="#trilha-da-disciplina" title="Permanent link">&para;</a></h2>
-<p>O e-commerce evolui durante o curso: primeiro definimos o que precisa ser
-garantido; depois organizamos o design, empacotamos e implantamos a aplicação e,
-por fim, observamos sua confiabilidade em execução.</p>
+<h2 id="checklist-de-um-requisito-util">Checklist de um requisito útil<a class="headerlink" href="#checklist-de-um-requisito-util" title="Permanent link">&para;</a></h2>
+<ul>
+<li>O cenário representa um risco real do negócio?</li>
+<li>A resposta esperada é observável?</li>
+<li>Existe uma métrica com unidade e limite?</li>
+<li>O ambiente de medição está descrito?</li>
+<li>As restrições e dependências são conhecidas?</li>
+<li>Há outro requisito que pode piorar com essa decisão?</li>
+</ul>
+<h2 id="proximo-passo">Próximo passo<a class="headerlink" href="#proximo-passo" title="Permanent link">&para;</a></h2>
+<p>Com os requisitos mensuráveis, compare alternativas e registre as consequências
+na <a href="../aula-01-decisoes-arquiteturais/">Aula 01.2: Decisões e trade-offs</a>.</p>
 
 
 
@@ -1731,7 +1876,7 @@ por fim, observamos sua confiabilidade em execução.</p>
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visão geral">
+          <a href="../aula-01-introducao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visão geral">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1748,13 +1893,13 @@ por fim, observamos sua confiabilidade em execução.</p>
         
         
           
-          <a href="../aula-01-requisitos-qualidade/" class="md-footer__link md-footer__link--next" aria-label="Próximo: 01.1 Requisitos de qualidade">
+          <a href="../aula-01-decisoes-arquiteturais/" class="md-footer__link md-footer__link--next" aria-label="Próximo: 01.2 Decisões e trade-offs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                01.1 Requisitos de qualidade
+                01.2 Decisões e trade-offs
               </div>
             </div>
             <div class="md-footer__button md-icon">
