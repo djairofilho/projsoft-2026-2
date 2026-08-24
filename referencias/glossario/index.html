@@ -985,6 +985,8 @@
       
         
       
+        
+      
     
     
     
@@ -1045,6 +1047,34 @@
     
   
     Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
   
 
     
@@ -1509,6 +1539,48 @@
 <dd>Pacote imutável que contém aplicação e dependências.</dd>
 <dt><strong>Container</strong></dt>
 <dd>Execução isolada de uma imagem.</dd>
+<dt><strong>Rede Docker</strong></dt>
+<dd>Rede virtual que conecta containers e controla quais participantes conseguem
+  se comunicar. Uma rede criada pelo usuário oferece nome próprio, isolamento e
+  descoberta de containers por nome. Consulte a
+  <a href="../docker/#redes-docker">referência rápida de Docker</a>.</dd>
+<dt><strong>Driver de rede</strong></dt>
+<dd>Implementação usada pelo Docker para oferecer conectividade. O driver define
+  onde a rede existe e como o tráfego circula; <code>bridge</code> é o driver comum para
+  containers executados no mesmo host.</dd>
+<dt><strong>Bridge</strong></dt>
+<dd>Rede privada criada no host Docker. A <code>bridge</code> padrão recebe containers que não
+  informam uma rede, enquanto uma bridge criada pelo usuário permite organizar
+  uma aplicação e resolver participantes pelo nome do container.</dd>
+<dt><strong>Descoberta por nome</strong></dt>
+<dd>Capacidade de um container localizar outro pelo nome, como <code>banco</code>, sem fixar
+  seu endereço IP interno. Está disponível nas redes Docker criadas pelo usuário.</dd>
+<dt><strong>Publicação de porta</strong></dt>
+<dd>Mapeamento de uma porta da máquina para uma porta do container, configurado com
+  <code>-p PORTA_HOST:PORTA_CONTAINER</code>. Publicar uma porta permite acesso externo e é
+  diferente de conectar containers à mesma rede.</dd>
+<dt><strong>Variável de ambiente</strong></dt>
+<dd>Par nome e valor fornecido ao processo no momento da execução. Em Docker, pode
+  ser definida com <code>-e NOME=VALOR</code>, herdada com <code>-e NOME</code> ou carregada por
+  <code>--env-file</code>. Não deve ser tratada como armazenamento seguro de segredos.</dd>
+<dt><strong>Arquivo de ambiente</strong></dt>
+<dd>Arquivo de linhas <code>NOME=VALOR</code> fornecido com <code>--env-file</code>. Um exemplo pode ser
+  versionado com valores fictícios, mas arquivos com credenciais reais devem
+  permanecer fora do repositório.</dd>
+<dt><strong>Docker Compose</strong></dt>
+<dd>Ferramenta que define e executa uma aplicação com vários containers a partir
+  de um arquivo <code>compose.yaml</code>. Consulte a
+  <a href="../docker-compose/">referência rápida de Docker Compose</a>.</dd>
+<dt><strong>Arquivo Compose</strong></dt>
+<dd>Documento YAML que descreve serviços, redes, volumes e outras opções da
+  aplicação. O nome preferencial é <code>compose.yaml</code>.</dd>
+<dt><strong>Serviço Compose</strong></dt>
+<dd>Componente definido em <code>services</code> que descreve como criar um ou mais containers
+  com a mesma imagem e configuração. Na rede do projeto, o nome do serviço também
+  funciona como hostname.</dd>
+<dt><strong>Volume nomeado</strong></dt>
+<dd>Armazenamento gerenciado pelo Docker e identificado por nome. Seu ciclo de vida
+  é separado do container, permitindo recriar um serviço sem perder os dados.</dd>
 <dt><strong>Idempotência</strong></dt>
 <dd>Propriedade que permite repetir uma operação lógica sem produzir um novo efeito.
   Veja a <a href="../../aulas/aula-04-testes-erros/">Aula 04.1</a>.</dd>

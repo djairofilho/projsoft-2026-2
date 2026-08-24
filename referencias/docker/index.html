@@ -18,7 +18,7 @@
         <link rel="prev" href="../../aulas/aula-05-redes-docker/">
       
       
-        <link rel="next" href="../docker-hub/">
+        <link rel="next" href="../docker-compose/">
       
       
         
@@ -985,6 +985,8 @@
       
         
       
+        
+      
     
     
     
@@ -1119,13 +1121,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-e-configuracao" class="md-nav__link">
+  <a href="#redes-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redes e configuração
+        Redes Docker
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Redes Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge-padrao-e-bridge-criada-pelo-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge padrão e bridge criada pelo usuário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rede-interna-nao-e-publicacao-de-porta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rede interna não é publicação de porta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos de rede
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis de ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis de ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#informar-valores-no-comando" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informar valores no comando
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-um-arquivo-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usar um arquivo de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1133,6 +1213,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1333,13 +1441,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-e-configuracao" class="md-nav__link">
+  <a href="#redes-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redes e configuração
+        Redes Docker
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Redes Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge-padrao-e-bridge-criada-pelo-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge padrão e bridge criada pelo usuário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rede-interna-nao-e-publicacao-de-porta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rede interna não é publicação de porta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos de rede
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis de ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis de ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#informar-valores-no-comando" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informar valores no comando
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-um-arquivo-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usar um arquivo de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1482,17 +1668,173 @@
 </tr>
 </tbody>
 </table>
-<h2 id="redes-e-configuracao">Redes e configuração<a class="headerlink" href="#redes-e-configuracao" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>-d<span class="w"> </span>bridge<span class="w"> </span>rede-app
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>--network<span class="w"> </span>rede-app<span class="w"> </span>-e<span class="w"> </span><span class="nv">CHAVE</span><span class="o">=</span>valor<span class="w"> </span>imagem
+<h2 id="redes-docker">Redes Docker<a class="headerlink" href="#redes-docker" title="Permanent link">&para;</a></h2>
+<p>Uma rede Docker permite que containers se comuniquem sem publicar todas as
+portas na máquina. O driver <code>bridge</code> cria uma rede privada no próprio host e é o
+mais comum durante desenvolvimento local.</p>
+<h3 id="bridge-padrao-e-bridge-criada-pelo-usuario">Bridge padrão e bridge criada pelo usuário<a class="headerlink" href="#bridge-padrao-e-bridge-criada-pelo-usuario" title="Permanent link">&para;</a></h3>
+<p>Quando nenhum <code>--network</code> é informado, o container entra na rede <code>bridge</code> padrão.
+Ela oferece conectividade básica, mas uma rede criada pelo usuário é preferível
+para aplicações com vários containers porque fornece isolamento explícito e
+resolução de nomes entre os participantes.</p>
+<table>
+<thead>
+<tr>
+<th>Rede</th>
+<th>Característica</th>
+<th>Uso indicado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridge</code> padrão</td>
+<td>Usada automaticamente e compartilhada por containers sem rede explícita</td>
+<td>Testes simples com um único container</td>
+</tr>
+<tr>
+<td><code>bridge</code> criada pelo usuário</td>
+<td>Possui nome próprio e descoberta por nome de container</td>
+<td>Aplicação, banco e outros serviços relacionados</td>
+</tr>
+</tbody>
+</table>
+<p>Crie uma rede e conecte dois containers:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--driver<span class="w"> </span>bridge<span class="w"> </span>rede-ecommerce
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--name<span class="w"> </span>banco<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--network<span class="w"> </span>rede-ecommerce<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>postgres:VERSAO
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--name<span class="w"> </span>app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>--network<span class="w"> </span>rede-ecommerce<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>USUARIO/ecommerce:VERSAO
 </span></code></pre></div>
+<p>Dentro da <code>rede-ecommerce</code>, a aplicação pode usar <code>banco</code> como nome do host. O
+endereço IP interno pode mudar quando o container é recriado, por isso não deve
+ser fixado na configuração.</p>
+<h3 id="rede-interna-nao-e-publicacao-de-porta">Rede interna não é publicação de porta<a class="headerlink" href="#rede-interna-nao-e-publicacao-de-porta" title="Permanent link">&para;</a></h3>
+<p><code>--network rede-ecommerce</code> permite comunicação entre containers. Já
+<code>-p 8080:8080</code> publica uma porta do container na máquina para acesso externo.
+O banco não precisa publicar sua porta quando somente a aplicação o utiliza.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>navegador → porta 8080 da máquina → app:8080
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                      ↓ rede-ecommerce
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                                   banco:5432
+</span></code></pre></div>
+<h3 id="comandos-de-rede">Comandos de rede<a class="headerlink" href="#comandos-de-rede" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Objetivo</th>
+<th>Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Listar redes</td>
+<td><code>docker network ls</code></td>
+</tr>
+<tr>
+<td>Criar uma bridge</td>
+<td><code>docker network create --driver bridge rede-ecommerce</code></td>
+</tr>
+<tr>
+<td>Inspecionar participantes e configuração</td>
+<td><code>docker network inspect rede-ecommerce</code></td>
+</tr>
+<tr>
+<td>Conectar um container existente</td>
+<td><code>docker network connect rede-ecommerce app</code></td>
+</tr>
+<tr>
+<td>Desconectar um container</td>
+<td><code>docker network disconnect rede-ecommerce app</code></td>
+</tr>
+<tr>
+<td>Remover uma rede sem containers</td>
+<td><code>docker network rm rede-ecommerce</code></td>
+</tr>
+</tbody>
+</table>
+<p>Uma rede não pode ser removida enquanto possui containers conectados. Use
+<code>docker network inspect</code> para localizar os participantes antes de desconectá-los.</p>
+<h2 id="variaveis-de-ambiente">Variáveis de ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<p>Variáveis de ambiente separam a configuração que muda entre execuções da imagem
+imutável. Elas podem definir perfil, endereço de dependência, porta e outras
+opções que não devem ser gravadas no <code>Dockerfile</code>.</p>
+<h3 id="informar-valores-no-comando">Informar valores no comando<a class="headerlink" href="#informar-valores-no-comando" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--network<span class="w"> </span>rede-ecommerce<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">APP_PROFILE</span><span class="o">=</span>dev<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">DB_HOST</span><span class="o">=</span>banco<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>USUARIO/ecommerce:VERSAO
+</span></code></pre></div>
+<p>Também é possível repassar uma variável já definida no terminal sem repetir seu
+valor:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>APP_PROFILE<span class="w"> </span>USUARIO/ecommerce:VERSAO
+</span></code></pre></div>
+<p>Nesse formato, o Docker procura <code>APP_PROFILE</code> no ambiente que executa o comando.</p>
+<h3 id="usar-um-arquivo-de-ambiente">Usar um arquivo de ambiente<a class="headerlink" href="#usar-um-arquivo-de-ambiente" title="Permanent link">&para;</a></h3>
+<p>Para muitas variáveis, use um arquivo fora do controle de versão:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>APP_PROFILE=dev
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>DB_HOST=banco
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>DB_PORT=5432
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--env-file<span class="w"> </span>CAMINHO_DO_ARQUIVO.env<span class="w"> </span>USUARIO/ecommerce:VERSAO
+</span></code></pre></div>
+<p>Um arquivo <code>.env.example</code> pode registrar apenas nomes e valores fictícios. O
+arquivo usado de verdade não deve ser commitado quando contém credenciais ou
+outros dados sensíveis.</p>
+<table>
+<thead>
+<tr>
+<th>Forma</th>
+<th>Exemplo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor direto</td>
+<td><code>-e APP_PROFILE=dev</code></td>
+<td>Claro para configurações não sensíveis e pontuais</td>
+</tr>
+<tr>
+<td>Ambiente atual</td>
+<td><code>-e APP_PROFILE</code></td>
+<td>Reutiliza o valor definido no terminal</td>
+</tr>
+<tr>
+<td>Arquivo</td>
+<td><code>--env-file CAMINHO.env</code></td>
+<td>Evita uma linha de comando extensa</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Variável de ambiente não é cofre de segredos</p>
+<p>Valores podem aparecer no histórico do terminal, em ferramentas do sistema e
+na inspeção do container. Em ambientes reais, use o mecanismo de segredos da
+plataforma, limite permissões e nunca publique credenciais no repositório.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Diagnóstico</p>
 <p>Quando a aplicação não responde, verifique se o container está ativo, leia os
-logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.</p>
+logs, inspecione a rede e confirme o mapeamento entre a porta da máquina e a
+porta da aplicação.</p>
 </div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>--all
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>app
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>rede-ecommerce
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>docker<span class="w"> </span>inspect<span class="w"> </span>app
+</span></code></pre></div>
 <p>Para autenticação, tags e publicação de imagens, consulte a
 <a href="../docker-hub/">referência rápida de Docker Hub</a>.</p>
+<p>Para registrar aplicação, banco, rede, variáveis e volumes em um único arquivo,
+consulte a <a href="../docker-compose/">referência rápida de Docker Compose</a>.</p>
 
 
 
@@ -1545,13 +1887,13 @@ logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.
         
         
           
-          <a href="../docker-hub/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Docker Hub">
+          <a href="../docker-compose/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Docker Compose">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Docker Hub
+                Docker Compose
               </div>
             </div>
             <div class="md-footer__button md-icon">
