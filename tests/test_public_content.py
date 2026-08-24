@@ -24,6 +24,28 @@ PATTERN_SUBLESSONS = {
         "aula-02-padroes-fundamentais.md",
     ),
 }
+SUPPLEMENTAL_LESSONS = {
+    "aula-01-requisitos-qualidade.md": (
+        "aula-01-introducao.md",
+        "aula-01-decisoes-arquiteturais.md",
+        0,
+    ),
+    "aula-01-decisoes-arquiteturais.md": (
+        "aula-01-introducao.md",
+        "aula-01-requisitos-qualidade.md",
+        0,
+    ),
+    "aula-04-testes-erros.md": (
+        "aula-04-confiabilidade.md",
+        "aula-04-entrega-observabilidade.md",
+        6,
+    ),
+    "aula-04-entrega-observabilidade.md": (
+        "aula-04-confiabilidade.md",
+        "aula-04-testes-erros.md",
+        2,
+    ),
+}
 
 
 def file_hash(path: Path) -> str:
@@ -84,6 +106,37 @@ class PublicContentTests(unittest.TestCase):
                 self.assertIn("aula-02-manutenibilidade.md", text)
                 self.assertIn(peer, text)
 
+    def test_supplemental_lessons_are_linked_and_self_contained(self) -> None:
+        config = (REPOSITORY / "mkdocs.yml").read_text(encoding="utf-8")
+
+        for filename, (parent, peer, minimum_java) in SUPPLEMENTAL_LESSONS.items():
+            with self.subTest(sublesson=filename):
+                path = REPOSITORY / "docs" / "aulas" / filename
+                text = path.read_text(encoding="utf-8")
+                parent_text = (path.parent / parent).read_text(encoding="utf-8")
+
+                self.assertIn("```mermaid", text)
+                self.assertGreaterEqual(text.count("```java"), minimum_java)
+                self.assertNotIn('class="pdf-preview"', text)
+                self.assertIn(parent, text)
+                self.assertIn(peer, text)
+                self.assertIn(filename, parent_text)
+                self.assertIn(f"aulas/{filename}", config)
+
+    def test_docker_lessons_form_a_guided_sequence(self) -> None:
+        docker = (
+            REPOSITORY / "docs" / "aulas" / "aula-03-docker.md"
+        ).read_text(encoding="utf-8")
+        aws = (
+            REPOSITORY / "docs" / "aulas" / "aula-03-tutorial-aws.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("```mermaid", docker)
+        self.assertIn("```mermaid", aws)
+        self.assertIn("aula-03-tutorial-aws.md", docker)
+        self.assertIn("aula-03-docker.md", aws)
+        self.assertIn("VERSAO_ANTERIOR", aws)
+
     def test_mkdocs_configures_native_mermaid_fences(self) -> None:
         config = (REPOSITORY / "mkdocs.yml").read_text(encoding="utf-8")
         self.assertIn("name: mermaid", config)
@@ -105,7 +158,12 @@ class PublicContentTests(unittest.TestCase):
                 if path.suffix.lower() in TEXT_SUFFIXES:
                     text = content.decode("utf-8")
                     self.assertIsNone(ipv4.search(text))
-                    mojibake_artifacts = (chr(0x00C3), chr(0x00C2), chr(0xFFFD))
+                    mojibake_artifacts = (
+                        chr(0x0007),
+                        chr(0x00C3),
+                        chr(0x00C2),
+                        chr(0xFFFD),
+                    )
                     for artifact in mojibake_artifacts:
                         self.assertNotIn(artifact, text)
 
