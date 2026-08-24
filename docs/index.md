@@ -99,6 +99,8 @@ resultado esperado e termina com evidência de que esse resultado foi alcançado
 Use estas páginas durante exercícios e implementação:
 
 - [Docker](referencias/docker.md): comandos para imagens, containers e redes;
+- [Docker Hub](referencias/docker-hub.md): login, tags, publicação e download de
+  imagens;
 - [AWS](referencias/aws.md): acesso remoto e fluxo seguro de deploy;
 - [Glossário](referencias/glossario.md): conceitos de arquitetura e requisitos de
   qualidade;

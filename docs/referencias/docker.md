@@ -32,3 +32,6 @@ docker run --name app --network rede-app -e CHAVE=valor imagem
 !!! tip "Diagnóstico"
     Quando a aplicação não responde, verifique se o container está ativo, leia os
     logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.
+
+Para autenticação, tags e publicação de imagens, consulte a
+[referência rápida de Docker Hub](docker-hub.md).

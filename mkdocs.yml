@@ -77,6 +77,7 @@ nav:
       - Aula 04 — Confiabilidade: aulas/aula-04-confiabilidade.md
   - Referências rápidas:
       - Docker: referencias/docker.md
+      - Docker Hub: referencias/docker-hub.md
       - AWS: referencias/aws.md
       - Glossário: referencias/glossario.md
   - Fontes e atribuição: fontes.md

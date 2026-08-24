@@ -110,5 +110,6 @@ containers não é o mesmo que remover imagens.
     container. Use apenas marcadores em documentação e o mecanismo de segredos da
     plataforma em ambientes reais.
 
-Veja também a [referência rápida de Docker](../referencias/docker.md), que reúne o
-fluxo completo em formato de consulta.
+Veja também as referências rápidas de [Docker](../referencias/docker.md) e
+[Docker Hub](../referencias/docker-hub.md), que reúnem o fluxo completo em formato
+de consulta.
