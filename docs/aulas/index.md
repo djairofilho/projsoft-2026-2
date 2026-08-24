@@ -9,6 +9,7 @@
 | [03.1](aula-03-docker.md) | Docker, imagens e containers | 2 páginas |
 | [03.2](aula-03-tutorial-aws.md) | Implantação manual na AWS | 2 páginas |
 | [04](aula-04-confiabilidade.md) | Disponibilidade e confiabilidade | 15 páginas |
+| [05](aula-05-redes-docker.md) | Redes Docker e PostgreSQL | 3 páginas |
 
 ### Subaulas da Aula 01
 
@@ -45,7 +46,8 @@ As subaulas ampliam o tema de padrões sem adicionar novos PDFs ao inventário:
 As duas primeiras aulas definem **o que avaliar** e **como organizar o design**.
 Docker e AWS introduzem uma forma concreta de empacotar e implantar a aplicação.
 A aula de confiabilidade fecha o ciclo com prevenção, automação, observabilidade
-e aprendizado após falhas.
+e aprendizado após falhas. A Aula 05 retoma a implantação para conectar aplicação
+e banco por uma rede Docker com descoberta de serviço por nome.
 
 !!! tip "Revisão cumulativa"
     Ao estudar uma técnica, pergunte qual requisito ela melhora e qual custo ou

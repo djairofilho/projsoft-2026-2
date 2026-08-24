@@ -61,6 +61,15 @@ e direto dos PDFs.
     [Testes, erros e idempotência](aulas/aula-04-testes-erros.md) ·
     [Entrega e observabilidade](aulas/aula-04-entrega-observabilidade.md)
 
+-   :material-access-point-network:{ .lg .middle } **Aula 05: Redes Docker**
+
+    Comunicação entre a aplicação Java e o PostgreSQL usando rede bridge, DNS
+    interno e variáveis de ambiente.
+
+    **PDF com 3 páginas**
+
+    [Estudar Redes Docker](aulas/aula-05-redes-docker.md)
+
 </div>
 
 ## Como usar o material

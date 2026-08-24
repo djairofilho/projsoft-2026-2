@@ -89,6 +89,7 @@ nav:
           - Visão geral: aulas/aula-04-confiabilidade.md
           - 04.1 Testes, erros e idempotência: aulas/aula-04-testes-erros.md
           - 04.2 Entrega e observabilidade: aulas/aula-04-entrega-observabilidade.md
+      - "Aula 05: Redes Docker": aulas/aula-05-redes-docker.md
   - Referências rápidas:
       - Docker: referencias/docker.md
       - Docker Hub: referencias/docker-hub.md
