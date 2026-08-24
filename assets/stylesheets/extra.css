@@ -22,6 +22,17 @@
   font-size: 0.75rem;
 }
 
+.mermaid {
+  margin-block: 1.5rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 44.9844em) {
   .pdf-preview {
     height: 68vh;
