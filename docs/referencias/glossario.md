@@ -100,6 +100,59 @@
 **Container**
 : Execução isolada de uma imagem.
 
+**Rede Docker**
+: Rede virtual que conecta containers e controla quais participantes conseguem
+  se comunicar. Uma rede criada pelo usuário oferece nome próprio, isolamento e
+  descoberta de containers por nome. Consulte a
+  [referência rápida de Docker](docker.md#redes-docker).
+
+**Driver de rede**
+: Implementação usada pelo Docker para oferecer conectividade. O driver define
+  onde a rede existe e como o tráfego circula; `bridge` é o driver comum para
+  containers executados no mesmo host.
+
+**Bridge**
+: Rede privada criada no host Docker. A `bridge` padrão recebe containers que não
+  informam uma rede, enquanto uma bridge criada pelo usuário permite organizar
+  uma aplicação e resolver participantes pelo nome do container.
+
+**Descoberta por nome**
+: Capacidade de um container localizar outro pelo nome, como `banco`, sem fixar
+  seu endereço IP interno. Está disponível nas redes Docker criadas pelo usuário.
+
+**Publicação de porta**
+: Mapeamento de uma porta da máquina para uma porta do container, configurado com
+  `-p PORTA_HOST:PORTA_CONTAINER`. Publicar uma porta permite acesso externo e é
+  diferente de conectar containers à mesma rede.
+
+**Variável de ambiente**
+: Par nome e valor fornecido ao processo no momento da execução. Em Docker, pode
+  ser definida com `-e NOME=VALOR`, herdada com `-e NOME` ou carregada por
+  `--env-file`. Não deve ser tratada como armazenamento seguro de segredos.
+
+**Arquivo de ambiente**
+: Arquivo de linhas `NOME=VALOR` fornecido com `--env-file`. Um exemplo pode ser
+  versionado com valores fictícios, mas arquivos com credenciais reais devem
+  permanecer fora do repositório.
+
+**Docker Compose**
+: Ferramenta que define e executa uma aplicação com vários containers a partir
+  de um arquivo `compose.yaml`. Consulte a
+  [referência rápida de Docker Compose](docker-compose.md).
+
+**Arquivo Compose**
+: Documento YAML que descreve serviços, redes, volumes e outras opções da
+  aplicação. O nome preferencial é `compose.yaml`.
+
+**Serviço Compose**
+: Componente definido em `services` que descreve como criar um ou mais containers
+  com a mesma imagem e configuração. Na rede do projeto, o nome do serviço também
+  funciona como hostname.
+
+**Volume nomeado**
+: Armazenamento gerenciado pelo Docker e identificado por nome. Seu ciclo de vida
+  é separado do container, permitindo recriar um serviço sem perder os dados.
+
 **Idempotência**
 : Propriedade que permite repetir uma operação lógica sem produzir um novo efeito.
   Veja a [Aula 04.1](../aulas/aula-04-testes-erros.md).

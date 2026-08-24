@@ -110,6 +110,8 @@ resultado esperado e termina com evidência de que esse resultado foi alcançado
 Use estas páginas durante exercícios e implementação:
 
 - [Docker](referencias/docker.md): comandos para imagens, containers e redes;
+- [Docker Compose](referencias/docker-compose.md): serviços, redes, variáveis,
+  volumes e ciclo de vida de uma aplicação com vários containers;
 - [Docker Hub](referencias/docker-hub.md): login, tags, publicação e download de
   imagens;
 - [Máquinas AWS](referencias/aws.md): acesso remoto e fluxo seguro de deploy;

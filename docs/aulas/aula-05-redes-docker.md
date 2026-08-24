@@ -224,5 +224,7 @@ de dados, controle de acesso e gerenciamento seguro de segredos.
   básicos.
 - Consulte a [referência rápida de Docker](../referencias/docker.md) durante o
   laboratório.
+- Depois de executar os containers manualmente, automatize a mesma topologia com
+  a [referência rápida de Docker Compose](../referencias/docker-compose.md).
 - Use o fluxo de acesso da [Aula 03.2](aula-03-tutorial-aws.md) para executar o
   exercício na máquina AWS.
