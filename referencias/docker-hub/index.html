@@ -12,13 +12,13 @@
         <meta name="author" content="Djairo Dantas">
       
       
-        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/referencias/docker/">
+        <link rel="canonical" href="https://djairofilho.github.io/projsoft-2026-2/referencias/docker-hub/">
       
       
-        <link rel="prev" href="../../aulas/aula-04-confiabilidade/">
+        <link rel="prev" href="../docker/">
       
       
-        <link rel="next" href="../docker-hub/">
+        <link rel="next" href="../aws/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Docker - Projeto de Software — 2026.2</title>
+        <title>Docker Hub - Projeto de Software — 2026.2</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#referencia-rapida-docker" class="md-skip">
+        <a href="#referencia-rapida-docker-hub" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              Docker Hub
             
           </span>
         </div>
@@ -578,6 +578,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -597,7 +625,7 @@
   <span class="md-ellipsis">
     
   
-    Docker
+    Docker Hub
   
 
     
@@ -615,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Docker
+    Docker Hub
   
 
     
@@ -641,10 +669,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#containers" class="md-nav__link">
+  <a href="#modelo-de-nome" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Containers
+        Modelo de nome
       
     </span>
   </a>
@@ -652,10 +680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagens" class="md-nav__link">
+  <a href="#autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imagens
+        Autenticação
       
     </span>
   </a>
@@ -663,10 +691,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-e-configuracao" class="md-nav__link">
+  <a href="#primeiro-push" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redes e configuração
+        Primeiro push
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategia-simples-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratégia simples de tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizar-uma-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atualizar uma aplicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos de consulta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erros-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erros comuns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-antes-de-publicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist antes de publicar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-oficial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação oficial
       
     </span>
   </a>
@@ -677,34 +771,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker-hub/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Docker Hub
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -827,10 +893,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#containers" class="md-nav__link">
+  <a href="#modelo-de-nome" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Containers
+        Modelo de nome
       
     </span>
   </a>
@@ -838,10 +904,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#imagens" class="md-nav__link">
+  <a href="#autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Imagens
+        Autenticação
       
     </span>
   </a>
@@ -849,10 +915,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redes-e-configuracao" class="md-nav__link">
+  <a href="#primeiro-push" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redes e configuração
+        Primeiro push
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategia-simples-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estratégia simples de tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizar-uma-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atualizar uma aplicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos de consulta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erros-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erros comuns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-antes-de-publicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist antes de publicar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-oficial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação oficial
       
     </span>
   </a>
@@ -902,7 +1034,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../docker/" class="md-path__link">
           
   <span class="md-ellipsis">
     Referências rápidas
@@ -927,47 +1059,99 @@
   
 
 
-<h1 id="referencia-rapida-docker">Referência rápida — Docker<a class="headerlink" href="#referencia-rapida-docker" title="Permanent link">&para;</a></h1>
-<h2 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h2>
+<h1 id="referencia-rapida-docker-hub">Referência rápida: Docker Hub<a class="headerlink" href="#referencia-rapida-docker-hub" title="Permanent link">&para;</a></h1>
+<p>Docker Hub é um registro de imagens. Ele armazena versões construídas localmente
+para que outras máquinas, pipelines e ambientes de deploy possam baixá-las.</p>
+<h2 id="modelo-de-nome">Modelo de nome<a class="headerlink" href="#modelo-de-nome" title="Permanent link">&para;</a></h2>
+<p>Uma imagem publicada no Docker Hub segue este formato:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>USUARIO_OU_ORGANIZACAO/REPOSITORIO:TAG
+</span></code></pre></div>
+<p>Exemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>meu-usuario/minha-app:1.0.0
+</span></code></pre></div>
 <table>
 <thead>
 <tr>
-<th>Objetivo</th>
-<th>Comando</th>
+<th>Parte</th>
+<th>Função</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Iniciar</td>
-<td><code>docker run --name app -p 8080:8080 imagem</code></td>
+<td><code>meu-usuario</code></td>
+<td>Namespace da conta ou organização</td>
 </tr>
 <tr>
-<td>Listar ativos</td>
-<td><code>docker ps</code></td>
+<td><code>minha-app</code></td>
+<td>Repositório que agrupa as imagens da aplicação</td>
 </tr>
 <tr>
-<td>Listar todos</td>
-<td><code>docker ps --all</code></td>
-</tr>
-<tr>
-<td>Ver logs</td>
-<td><code>docker logs app</code></td>
-</tr>
-<tr>
-<td>Acompanhar logs</td>
-<td><code>docker logs -f app</code></td>
-</tr>
-<tr>
-<td>Parar</td>
-<td><code>docker stop app</code></td>
-</tr>
-<tr>
-<td>Remover</td>
-<td><code>docker rm app</code></td>
+<td><code>1.0.0</code></td>
+<td>Tag que identifica uma versão ou variante</td>
 </tr>
 </tbody>
 </table>
-<h2 id="imagens">Imagens<a class="headerlink" href="#imagens" title="Permanent link">&para;</a></h2>
+<p>Quando a tag é omitida, o Docker usa <code>latest</code>. Esse nome não significa “versão
+mais nova” automaticamente. Ele é apenas uma tag convencional que pode apontar
+para qualquer imagem.</p>
+<h2 id="autenticacao">Autenticação<a class="headerlink" href="#autenticacao" title="Permanent link">&para;</a></h2>
+<p>O comando padrão abre o fluxo de autenticação pelo navegador:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>login
+</span></code></pre></div>
+<p>Para autenticar pelo terminal com um token pessoal:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>USUARIO
+</span></code></pre></div>
+<p>Quando o comando solicitar a senha, forneça um Personal Access Token (PAT). O
+token pode ter permissões de leitura, escrita ou exclusão e é obrigatório para a
+CLI quando a conta usa autenticação em dois fatores.</p>
+<p>Para encerrar a sessão local:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span><span class="nb">logout</span>
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Não exponha o token</p>
+<p>Não escreva o token no comando, no Dockerfile, em arquivos do projeto ou em
+variáveis versionadas. Em CI/CD, armazene-o no mecanismo de segredos da
+plataforma e conceda somente as permissões necessárias.</p>
+</div>
+<h2 id="primeiro-push">Primeiro push<a class="headerlink" href="#primeiro-push" title="Permanent link">&para;</a></h2>
+<p>Construa a imagem já com o namespace e uma versão explícita:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app:1.0.0<span class="w"> </span>.
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app:1.0.0
+</span></code></pre></div>
+<p>O ponto final é o contexto do build. O nome antes dos dois-pontos identifica o
+repositório; o valor depois deles é a tag enviada.</p>
+<p>Se a imagem já foi construída com outro nome, crie uma nova tag sem refazer o
+build:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>tag<span class="w"> </span>minha-app:local<span class="w"> </span>USUARIO/minha-app:1.0.0
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app:1.0.0
+</span></code></pre></div>
+<p><code>docker tag</code> cria outra referência para a mesma imagem local. Ele não duplica as
+camadas.</p>
+<h2 id="estrategia-simples-de-tags">Estratégia simples de tags<a class="headerlink" href="#estrategia-simples-de-tags" title="Permanent link">&para;</a></h2>
+<p>Use uma versão imutável para cada entrega e mova <code>latest</code> apenas quando quiser
+indicar a versão padrão:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>USUARIO/minha-app:1.2.0<span class="w"> </span>.
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app:1.2.0
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker<span class="w"> </span>tag<span class="w"> </span>USUARIO/minha-app:1.2.0<span class="w"> </span>USUARIO/minha-app:latest
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>docker<span class="w"> </span>push<span class="w"> </span>USUARIO/minha-app:latest
+</span></code></pre></div>
+<p>No deploy, prefira a tag fixa:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app:1.2.0
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app:1.2.0
+</span></code></pre></div>
+<p>Assim, o ambiente executa uma versão conhecida. Usar apenas <code>latest</code> dificulta
+saber qual conteúdo estava em produção e repetir um deploy anterior.</p>
+<h2 id="atualizar-uma-aplicacao">Atualizar uma aplicação<a class="headerlink" href="#atualizar-uma-aplicacao" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>USUARIO/minha-app:1.3.0
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>docker<span class="w"> </span>stop<span class="w"> </span>app
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>USUARIO/minha-app:1.3.0
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>app
+</span></code></pre></div>
+<p>Baixe a nova versão antes de parar a atual. Isso reduz o tempo entre a remoção do
+container antigo e o início do novo.</p>
+<h2 id="comandos-de-consulta">Comandos de consulta<a class="headerlink" href="#comandos-de-consulta" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -977,38 +1161,84 @@
 </thead>
 <tbody>
 <tr>
-<td>Construir</td>
-<td><code>docker build -t usuario/imagem .</code></td>
-</tr>
-<tr>
-<td>Listar</td>
+<td>Listar imagens locais</td>
 <td><code>docker images</code></td>
 </tr>
 <tr>
-<td>Publicar</td>
-<td><code>docker push usuario/imagem</code></td>
+<td>Baixar uma versão</td>
+<td><code>docker pull USUARIO/minha-app:1.0.0</code></td>
 </tr>
 <tr>
-<td>Baixar</td>
-<td><code>docker pull usuario/imagem</code></td>
+<td>Publicar uma versão</td>
+<td><code>docker push USUARIO/minha-app:1.0.0</code></td>
 </tr>
 <tr>
-<td>Remover</td>
-<td><code>docker rmi usuario/imagem</code></td>
+<td>Publicar todas as tags locais</td>
+<td><code>docker push --all-tags USUARIO/minha-app</code></td>
+</tr>
+<tr>
+<td>Criar outra tag</td>
+<td><code>docker tag ORIGEM DESTINO</code></td>
+</tr>
+<tr>
+<td>Remover uma imagem local</td>
+<td><code>docker rmi USUARIO/minha-app:1.0.0</code></td>
+</tr>
+<tr>
+<td>Encerrar autenticação</td>
+<td><code>docker logout</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="redes-e-configuracao">Redes e configuração<a class="headerlink" href="#redes-e-configuracao" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>-d<span class="w"> </span>bridge<span class="w"> </span>rede-app
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>--network<span class="w"> </span>rede-app<span class="w"> </span>-e<span class="w"> </span><span class="nv">CHAVE</span><span class="o">=</span>valor<span class="w"> </span>imagem
-</span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Diagnóstico</p>
-<p>Quando a aplicação não responde, verifique se o container está ativo, leia os
-logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.</p>
-</div>
-<p>Para autenticação, tags e publicação de imagens, consulte a
-<a href="../docker-hub/">referência rápida de Docker Hub</a>.</p>
+<h2 id="erros-comuns">Erros comuns<a class="headerlink" href="#erros-comuns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mensagem ou sintoma</th>
+<th>Verificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>requested access to the resource is denied</code></td>
+<td>Confirme o login, o namespace e a permissão de escrita</td>
+</tr>
+<tr>
+<td><code>tag does not exist</code></td>
+<td>Execute <code>docker images</code> e confira nome e tag locais</td>
+</tr>
+<tr>
+<td>Push foi para <code>latest</code> sem intenção</td>
+<td>Informe <code>:TAG</code> no build e no push</td>
+</tr>
+<tr>
+<td>Deploy continua na versão anterior</td>
+<td>Use uma tag nova, execute <code>docker pull</code> e recrie o container</td>
+</tr>
+<tr>
+<td>Pull de repositório privado falha</td>
+<td>Autentique a máquina com uma credencial de leitura</td>
+</tr>
+</tbody>
+</table>
+<h2 id="checklist-antes-de-publicar">Checklist antes de publicar<a class="headerlink" href="#checklist-antes-de-publicar" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A imagem usa o namespace correto.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A entrega possui uma tag de versão explícita.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O build não contém chaves, senhas ou arquivos locais sensíveis.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A conta ou token possui somente as permissões necessárias.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O repositório está público ou privado conforme a necessidade.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O deploy referencia uma versão reproduzível.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> O container foi iniciado e seus logs foram conferidos.</li>
+</ul>
+<h2 id="documentacao-oficial">Documentação oficial<a class="headerlink" href="#documentacao-oficial" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.docker.com/docker-hub/quickstart/">Início rápido do Docker Hub</a></li>
+<li><a href="https://docs.docker.com/docker-hub/repos/manage/hub-images/tags/">Tags no Docker Hub</a></li>
+<li><a href="https://docs.docker.com/security/access-tokens/">Personal Access Tokens</a></li>
+<li><a href="https://docs.docker.com/reference/cli/docker/login/">Referência de <code>docker login</code></a></li>
+<li><a href="https://docs.docker.com/reference/cli/docker/image/push/">Referência de <code>docker push</code></a></li>
+</ul>
 
 
 
@@ -1044,7 +1274,7 @@ logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../../aulas/aula-04-confiabilidade/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 04 — Confiabilidade">
+          <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Docker">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1054,20 +1284,20 @@ logs e confirme o mapeamento entre a porta da máquina e a porta da aplicação.
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 04 — Confiabilidade
+                Docker
               </div>
             </div>
           </a>
         
         
           
-          <a href="../docker-hub/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Docker Hub">
+          <a href="../aws/" class="md-footer__link md-footer__link--next" aria-label="Próximo: AWS">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Docker Hub
+                AWS
               </div>
             </div>
             <div class="md-footer__button md-icon">
