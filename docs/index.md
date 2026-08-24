@@ -29,11 +29,14 @@ e direto dos PDFs.
 
 -   :material-tools:{ .lg .middle } **Aula 02: Manutenibilidade**
 
-    Acoplamento, coesão, métricas, SOLID e padrões de projeto.
+    Acoplamento, coesão, métricas, SOLID e duas subaulas de padrões de projeto.
 
     **PDF com 18 páginas**
 
     [Estudar Manutenibilidade](aulas/aula-02-manutenibilidade.md)
+
+    [Padrões fundamentais](aulas/aula-02-padroes-fundamentais.md) ·
+    [Padrões complementares](aulas/aula-02-padroes-complementares.md)
 
 -   :material-docker:{ .lg .middle } **Aula 03: Docker**
 

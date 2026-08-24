@@ -75,7 +75,10 @@ nav:
   - Aulas:
       - Visão geral: aulas/index.md
       - Aula 01 — Introdução: aulas/aula-01-introducao.md
-      - Aula 02 — Manutenibilidade: aulas/aula-02-manutenibilidade.md
+      - "Aula 02: Manutenibilidade":
+          - Visão geral e SOLID: aulas/aula-02-manutenibilidade.md
+          - 02.1 Padrões fundamentais: aulas/aula-02-padroes-fundamentais.md
+          - 02.2 Padrões complementares: aulas/aula-02-padroes-complementares.md
       - Aula 03 — Docker: aulas/aula-03-docker.md
       - Aula 03 — Tutorial AWS: aulas/aula-03-tutorial-aws.md
       - Aula 04 — Confiabilidade: aulas/aula-04-confiabilidade.md

@@ -1,8 +1,8 @@
-# Aula 02 — Manutenibilidade
+# Aula 02: Manutenibilidade e SOLID
 
 Manutenibilidade aparece no esforço necessário para entender, modificar, testar
-e corrigir um sistema. O objetivo não é produzir um código bonito de forma
-abstrata, mas tornar as próximas mudanças previsíveis, seguras e baratas.
+e corrigir um sistema. O objetivo não é produzir código bonito de forma abstrata,
+mas tornar as próximas mudanças previsíveis, seguras e baratas.
 
 ## Material original
 
@@ -24,7 +24,7 @@ abstrata, mas tornar as próximas mudanças previsíveis, seguras e baratas.
 - Identificar acoplamento, coesão, duplicação e complexidade.
 - Interpretar métricas sem transformá-las em objetivos isolados.
 - Usar SOLID para analisar responsabilidades e dependências.
-- Aplicar Strategy e Factory quando o problema justificar a abstração.
+- Escolher um padrão a partir do problema, não do nome da solução.
 
 ## O que significa manter um sistema?
 
@@ -54,16 +54,13 @@ Quatro problemas aparecem com frequência:
 - **duplicação:** a mesma regra precisa ser alterada em vários lugares;
 - **dependências frágeis:** detalhes externos vazam para o núcleo da aplicação.
 
-O resultado forma um ciclo econômico:
-
-```text
-mais tempo para entender
-        ↓
-mais risco para alterar
-        ↓
-mais defeitos e retrabalho
-        ↓
-menor velocidade do time
+```mermaid
+flowchart TD
+    A[Responsabilidades misturadas] --> B[Mais tempo para entender]
+    B --> C[Maior risco ao alterar]
+    C --> D[Mais defeitos e retrabalho]
+    D --> E[Menor velocidade do time]
+    E --> B
 ```
 
 Uma entrega lenta nem sempre indica falta de esforço. Pode indicar que cada
@@ -85,8 +82,8 @@ relações pequenas, explícitas e substituíveis.
 ### Responsabilidades claras
 
 Um módulo deve ter um propósito que possa ser explicado sem uma lista de funções
-desconexas. Uma classe que calcula preço, persiste pedido, envia e-mail e gera PDF
-mistura regras com motivos de mudança distintos.
+desconexas. Uma classe que calcula preço, persiste pedido, envia e-mail e gera
+nota fiscal mistura regras com motivos de mudança distintos.
 
 Separar `PricingService`, `OrderRepository` e `NotificationService` não é apenas
 organização. Cada mudança passa a ter um destino mais previsível e testes mais
@@ -118,20 +115,6 @@ Métricas podem ser manipuladas quando viram metas. Reduzir o tamanho médio de
 classes, por exemplo, pode gerar muitas classes pequenas sem melhorar o design.
 Use a tendência e o contexto para investigar, não para substituir julgamento.
 
-## Ferramentas de manutenibilidade
-
-O material organiza as ferramentas em grupos complementares:
-
-- código bem estruturado, Clean Code, SOLID e padrões de projeto;
-- testes de unidade, integração e ponta a ponta;
-- análise estática, identificação de *smells* e falhas de segurança;
-- observabilidade para diagnosticar o comportamento em execução;
-- métricas de engenharia para acompanhar o efeito no fluxo do time.
-
-Uma ferramenta cobre apenas parte do problema. Alta cobertura não garante bons
-testes; análise estática não detecta todas as decisões inadequadas; um padrão de
-projeto aplicado sem necessidade pode piorar a compreensão.
-
 ## SOLID como ferramenta de raciocínio
 
 SOLID reúne cinco princípios para pensar mudança, responsabilidade e dependência.
@@ -144,8 +127,7 @@ coerente de motivos para mudar. A pergunta prática é: quantas razões diferent
 podem exigir alteração aqui?
 
 Se `OrderService` calcula preço, salva no banco e envia e-mail, mudanças de regra
-comercial, persistência e comunicação competem no mesmo lugar. Separar as
-responsabilidades reduz interferência e permite testar cada uma diretamente.
+comercial, persistência e comunicação competem no mesmo lugar.
 
 ### O: Open/Closed Principle
 
@@ -153,17 +135,14 @@ O design deve permitir extensão sem transformar cada comportamento novo em uma
 alteração espalhada. “Fechado para modificação” não significa nunca tocar no
 código. Significa criar um ponto estável de extensão quando existe variação real.
 
-Em pagamentos, uma estratégia por método permite adicionar uma nova opção sem
-reescrever o fluxo que seleciona e executa a cobrança.
-
 ### L: Liskov Substitution Principle
 
 Uma implementação substituta deve preservar o contrato esperado. Se uma subclasse
 exige tratamento especial, rejeita operações válidas do tipo base ou muda o
 significado da resposta, a abstração é enganosa.
 
-O contrato inclui mais que a assinatura: condições de entrada, resultado, erros e
-efeitos observáveis também precisam ser compatíveis.
+O contrato inclui assinatura, condições de entrada, resultado, erros e efeitos
+observáveis.
 
 ### I: Interface Segregation Principle
 
@@ -178,77 +157,58 @@ cada método em um arquivo.
 
 Regras centrais devem depender de abstrações estáveis. Banco de dados, cliente
 HTTP e mensageria são detalhes que implementam contratos definidos pelo caso de
-uso. Isso permite trocar infraestrutura e testar o domínio com implementações
-controladas.
+uso.
 
 Injeção de dependência é um mecanismo comum para montar essas relações. Ela ajuda
 a aplicar o princípio, mas usar um framework de injeção não garante um bom limite
 arquitetural.
 
-## Padrão Strategy
+## Do problema ao padrão
 
-Strategy resolve uma família de comportamentos intercambiáveis. Sem ele, uma
-condicional tende a crescer sempre que surge PIX, cartão, boleto ou outro método.
+Um padrão só é útil quando reduz um custo de mudança conhecido. O caminho começa
+no sintoma, passa pelo princípio de design e termina em uma consequência que pode
+ser observada.
 
-```java
-public interface PaymentStrategy {
-    PaymentResult pay(Payment payment);
-}
-
-public final class PixStrategy implements PaymentStrategy {
-    @Override
-    public PaymentResult pay(Payment payment) {
-        return PaymentResult.approved("pix");
-    }
-}
+```mermaid
+flowchart LR
+    A[Problema recorrente] --> B[Princípio de design]
+    B --> C[Padrão aplicável]
+    C --> D[Responsabilidade mais clara]
+    D --> E[Mudança mais localizada]
+    E --> F[Menor custo e risco]
 ```
 
-O fluxo depende do contrato e cada estratégia concentra sua regra. Isso se
-conecta ao princípio aberto/fechado e melhora a testabilidade.
+| Se o problema é... | Princípio relacionado | Estude primeiro |
+|---|---|---|
+| Condicionais crescem com cada nova regra | OCP e SRP | Strategy e Factory |
+| Domínio conhece banco e detalhes de construção | DIP e SRP | Repository e Injeção de Dependência |
+| API externa contamina o modelo interno | DIP | Adapter |
+| Métricas ou logs alteram a classe principal | OCP e SRP | Decorator |
+| Uma ação precisa avisar vários interessados | OCP | Observer e Listener |
+| Um objeto complexo possui muitas combinações | SRP | Builder |
+| Itens individuais e grupos têm o mesmo comportamento | LSP | Composite |
 
-Strategy vale a pena quando os comportamentos variam, crescem ou precisam ser
-selecionados em execução. Para duas condições estáveis e triviais, a indireção
-pode custar mais do que ajuda.
+## Continue pelas subaulas
 
-## Padrão Factory
+<div class="grid cards" markdown>
 
-Factory concentra a criação de objetos. Ela evita que vários pontos conheçam
-classes concretas e regras de construção.
+-   :material-source-branch:{ .lg .middle } **02.1: Padrões fundamentais**
 
-```java
-public PaymentStrategy create(PaymentMethod method) {
-    return switch (method) {
-        case PIX -> new PixStrategy();
-        case CREDIT_CARD -> new CreditCardStrategy();
-        case BOLETO -> new BoletoStrategy();
-    };
-}
-```
+    Strategy, Factory, Repository e Injeção de Dependência aplicados ao checkout
+    e à persistência de pedidos.
 
-Strategy e Factory resolvem problemas diferentes. Strategy organiza a execução
-de comportamentos; Factory organiza a escolha e a construção das implementações.
-É comum usá-las juntas, mas uma não substitui a outra.
+    [Estudar padrões fundamentais](aula-02-padroes-fundamentais.md)
 
-## Outros padrões citados
+-   :material-puzzle-outline:{ .lg .middle } **02.2: Padrões complementares**
 
-| Padrão ou técnica | Intenção principal |
-|---|---|
-| Repository | Isolar o acesso e a persistência de dados |
-| Injeção de dependência | Fornecer colaboradores sem construí-los internamente |
-| Decorator | Acrescentar comportamento ao redor de outro objeto |
-| Builder | Construir objetos complexos passo a passo |
-| Observer e Listener | Reagir a eventos sem acoplamento direto entre emissores e interessados |
-| Composite | Tratar objetos individuais e composições por um contrato comum |
-| Adapter | Traduzir uma interface externa para o contrato esperado |
+    Adapter, Decorator, Observer, Builder e Composite aplicados a integrações,
+    eventos e composição do catálogo.
+
+    [Estudar padrões complementares](aula-02-padroes-complementares.md)
+
+</div>
 
 !!! warning "Padrões não são regras universais"
     Um padrão é útil quando nomeia e resolve um problema recorrente. Aplicá-lo
     antes de existir variação, dependência ou complexidade pode apenas adicionar
     arquivos e indireções.
-
-## Síntese
-
-Manutenibilidade é custo e risco de mudança. Acoplamento, coesão, complexidade,
-testabilidade e localidade ajudam a explicar esse custo. SOLID orienta perguntas
-sobre responsabilidades e dependências; padrões oferecem soluções conhecidas;
-métricas mostram se as decisões realmente melhoraram o sistema.

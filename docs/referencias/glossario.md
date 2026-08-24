@@ -44,6 +44,32 @@
 : Padrão que concentra a criação de objetos e esconde seus detalhes dos
   consumidores.
 
+**Repository**
+: Contrato que expressa operações de persistência na linguagem da aplicação e
+  isola detalhes do banco de dados.
+
+**Injeção de Dependência**
+: Técnica que fornece colaboradores a um objeto externamente, tornando relações
+  explícitas e substituíveis.
+
+**Adapter**
+: Padrão que traduz um contrato externo para a interface esperada pela aplicação.
+
+**Decorator**
+: Padrão que acrescenta comportamento ao redor de um objeto que preserva o mesmo
+  contrato.
+
+**Observer e Listener**
+: Padrão em que interessados reagem a eventos sem que o publicador conheça cada
+  implementação.
+
+**Builder**
+: Padrão que organiza a construção gradual e nomeada de objetos complexos.
+
+**Composite**
+: Padrão que permite tratar elementos individuais e composições por um contrato
+  comum.
+
 ## Entrega e operação
 
 **Imagem Docker**

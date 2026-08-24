@@ -14,6 +14,16 @@ MANIFEST = REPOSITORY / "data" / "aulas.yml"
 PDF_DIRECTORY = REPOSITORY / "docs" / "assets" / "pdfs" / "2026-2"
 IGNORED_PARTS = {".git", ".venv", "site", "__pycache__"}
 TEXT_SUFFIXES = {".md", ".py", ".txt", ".yml", ".yaml"}
+PATTERN_SUBLESSONS = {
+    "aula-02-padroes-fundamentais.md": (
+        3,
+        "aula-02-padroes-complementares.md",
+    ),
+    "aula-02-padroes-complementares.md": (
+        3,
+        "aula-02-padroes-fundamentais.md",
+    ),
+}
 
 
 def file_hash(path: Path) -> str:
@@ -57,6 +67,27 @@ class PublicContentTests(unittest.TestCase):
                 self.assertIn('class="pdf-preview"', text)
                 self.assertIn(lesson["source_file"], text)
                 self.assertNotIn("Perguntas de revisão", text)
+
+    def test_pattern_sublessons_have_guided_examples_and_diagrams(self) -> None:
+        for filename, (minimum_diagrams, peer) in PATTERN_SUBLESSONS.items():
+            with self.subTest(sublesson=filename):
+                path = REPOSITORY / "docs" / "aulas" / filename
+                text = path.read_text(encoding="utf-8")
+                self.assertGreaterEqual(text.count("```mermaid"), minimum_diagrams)
+                self.assertGreaterEqual(text.count("```java"), 4)
+                self.assertIn("### Antes", text)
+                self.assertIn("### Depois", text)
+                self.assertIn("Quando usar", text)
+                self.assertIn("Quando não usar", text)
+                self.assertIn("Custo introduzido", text)
+                self.assertNotIn('class="pdf-preview"', text)
+                self.assertIn("aula-02-manutenibilidade.md", text)
+                self.assertIn(peer, text)
+
+    def test_mkdocs_configures_native_mermaid_fences(self) -> None:
+        config = (REPOSITORY / "mkdocs.yml").read_text(encoding="utf-8")
+        self.assertIn("name: mermaid", config)
+        self.assertIn("pymdownx.superfences.fence_code_format", config)
 
     def test_repository_has_no_operational_secrets(self) -> None:
         forbidden_names = {"maquina.txt", "maquinas_geral.csv"}
